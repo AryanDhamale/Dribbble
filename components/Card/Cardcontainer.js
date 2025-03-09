@@ -25,7 +25,7 @@ function Cardcontainer() {
                 >
                     <CarouselContent >
                         {
-                            arr.map((ele, idx) => <CarouselItem key={idx} className="basic-3/10 lg:basis-2/5"> <ReviewCard/> </CarouselItem>)
+                            arr.map((ele, idx) => <CarouselItem key={idx} className="basic-3/10 lg:basis-35/100"> <ReviewCard/> </CarouselItem>)
                         }
                     </CarouselContent>
                     <CarouselPrevious className="text-black abosulte left-1.5 lg:-left-12"/>
