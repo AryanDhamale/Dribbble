@@ -21,7 +21,7 @@ function Services() {
                     <GiHotMeal  className="size-[3rem]" />
                     <div>
                         <p className="font-medium text-lg">All meals</p>
-                        <p className="font-normal text-xs opacity-50">Eat to your heart's content Breakfast. Lunch. Dinner.</p>
+                        <p className="font-normal text-xs opacity-50">Eat to your heart&apos;s content Breakfast. Lunch. Dinner.</p>
                     </div>
                 </div>
                 <div className="flex justfiy-center items-center px-2.5 gap-x-4">

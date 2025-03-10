@@ -20,7 +20,7 @@ function Footer()
                 </div>
                 <div>
                     <p className="flex gap-x-2 items-center"><LuPhoneCall/><span className="text-gray-900 font-normal">Call Us</span> </p>
-                    <p className="opacity-50 text-sm">Request a quote, or just chat about your next vacation. We're always happy to help!</p>
+                    <p className="opacity-50 text-sm">Request a quote, or just chat about your next vacation. We&apos;re always happy to help!</p>
                     <p className="font-medium text-blue-800">1800 22 7979</p>
                 </div>
                 <div>

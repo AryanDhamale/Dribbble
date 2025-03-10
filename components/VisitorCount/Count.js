@@ -22,7 +22,7 @@ function Count() {
     return (
         <div className="bg-[#16283a] text-white px-20 py-12">
             <div className="pl-4 py-6 border-l-8 border-yellow-500">
-                <p className="text-base font-medium">We're curating experiences that</p>
+                <p className="text-base font-medium">We&apos;re curating experiences that</p>
                 <p className="text-2xl font-medium text-yellow-500">{info[1]}</p>
             </div>
             <div className="grid max-[360px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6 py-14">
