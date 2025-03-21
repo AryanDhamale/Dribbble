@@ -7,7 +7,7 @@ import { GiCommercialAirplane } from "react-icons/gi";
 
 function Services() {
     return (
-        <div className="px-10 lg:px-30 py-16">
+        <div className="px-10 lg:px-30 py-16" id="services">
             <h1 className="text-xl font-normal text-center mb-8">All inclusive tours, Chalo Bag Bharo Nikal Pado!</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
                 <div className="flex justfiy-center items-center px-2.5 gap-x-4">
