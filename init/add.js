@@ -16,7 +16,6 @@ async function insertOnedoc(){
      cost : 90000,
      highlight : ["Srinagar Houseboat Stay","Avantipur ruins","Walk & Click tour of Betaab valley","Kashmiri Cricket Bat Factory","Gondola ride at Gulmarg","Shikara and Speed boat ride at Dal Lake","Kashmiri gardens - Shalimar & Nishat Bagh"]
    })   ;
-   console.log(listing);
 }
 
 async function insertManydoc(){

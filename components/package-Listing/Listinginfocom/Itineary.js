@@ -15,7 +15,6 @@ function Itineary({ data }) {
         data.cities.forEach((ele, idx) => {
             const match = ele.match(/(.+)\((\d+)N\)/);
             const city = match[1];
-            console.log(match,city);
             const nights = parseInt(match[2]);
             for (let i = 0; i < nights; i++) {
                 itinerary.push({
