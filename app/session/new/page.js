@@ -15,13 +15,13 @@ function Signup()
         {
          router.push('/');
         }
-    },[session])
+    })
     return ( 
-          <div className="border-l-2 border-slate-200 drop-shadow-lg w-[75%] flex justify-center items-center">
+          <div className="w-[69%] drop-shadow-lg flex justify-center items-center">
             <div className="w-2/5 flex flex-col gap-y-6">
                 <h1 className="text-2xl font-bold mb-8">Sign up to Dribbble</h1>
 
-                <div onClick={()=>signIn("google")} className="cursor-pointer bg-slate-900 text-white flex justify-center items-center gap-x-4 py-4 px-4 rounded-full w-[95%] mx-auto">
+                <div className="cursor-pointer bg-slate-900 text-white flex justify-center items-center gap-x-4 py-4 px-4 rounded-full w-[95%] mx-auto">
                 <FcGoogle className="text-2xl"/>
                 <span className="font-medium">Sign up with google</span>
                 </div>

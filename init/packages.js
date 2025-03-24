@@ -43,7 +43,6 @@ const tours = [
         "Pushkar Camel Fair",
         "City Palace Udaipur"
       ],
-      //card- https://www.designpataki.com/wp-content/uploads/2022/10/Airbnb-Gudliya-Suite-City-Palace-Jaipur-Royal-Experience-Design-Pataki-1.jpg
     },
     {
       image: "https://www.indiasinvitation.com/wp-content/uploads/2023/04/ghats-.jpeg",
@@ -155,10 +154,11 @@ const tours = [
       title : "Highlights of Kashmir - Pune",
       location : "Pune",
       totalDay : 6,
-      cities : ["Srinagar(Houseboat)(1N)","Pahalgam(1N)","Srinagar(3N)","Gulmarg"], 
+      cities : ["Srinagar(1N)","Pahalgam(1N)","Srinagar(3N)","Gulmarg"], 
       cost : 90000,
       highlight : ["Srinagar Houseboat Stay","Avantipur ruins","Walk & Click tour of Betaab valley","Kashmiri Cricket Bat Factory","Gondola ride at Gulmarg","Shikara and Speed boat ride at Dal Lake","Kashmiri gardens - Shalimar & Nishat Bagh"]
     }
   ];
+
   
   export default tours;

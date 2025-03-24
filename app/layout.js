@@ -1,8 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/HeaderAndFooter/Navbar";
-import Footer from "@/components/HeaderAndFooter/Footer";
 import SessionWrapper from "@/wrapper/sessionWrapper";
+import LayoutWrapper from "./LayoutWrapper.js";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,17 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Dribbble",
-  description: "This is an Dribbble AK-71",
+  description: "This is an Dribbble 747MAX",
 };
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SessionWrapper>
-        <Navbar/>
-        {children}
-        <Footer/>
+        <LayoutWrapper>{children}</LayoutWrapper>
         </SessionWrapper>
       </body>
     </html>

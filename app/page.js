@@ -1,22 +1,24 @@
-import Navbar from "@/components/HeaderAndFooter/Navbar";
-import Footer from "@/components/HeaderAndFooter/Footer";
 import Landing from "@/components/Body/Landing";
 import Count from "@/components/VisitorCount/Count";
 import Review from "@/components/Review/Review";
 import Services from "@/components/Body/Services";
-import Popular from "@/components/home-Listings/Popular";
-import City from "@/components/home-Listings/City";
+import PopularWrapper from "@/components/home-Listings/popular/PopularWrapper";
+import CityWrapper from "@/components/home-Listings/city/CityWrapper";
+import { Suspense } from "react";
+import Loading from "@/components/loader/loading";
 
 function App()
 {
   return (
     <div>
+       <Suspense fallback={<Loading />}>
        <Landing/>
-       <Popular/>
-       <City/>
+       <PopularWrapper/>
+       <CityWrapper/>
        <Review/>
        <Services/>
        <Count/>
+       </Suspense>
     </div>
   );
 }

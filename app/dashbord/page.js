@@ -11,7 +11,8 @@ function Dashbord(){
         {
           route.push("/session/new");
         }
-    },[]);
+        console.log("all times loaded!");
+    });
     return (
         <div>
             This is an Dashbord

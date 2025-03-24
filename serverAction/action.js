@@ -1,28 +1,25 @@
 "use server";
 import connetDb from "@/DataBase/connetDb";
 import Listing from "@/models/Listing";
+import City from "@/models/City";
 
-function filterOut(arr) {
-    let newarr = arr.map((ele, idx) => ({
-        ...ele,
-        _id: ele._id.toString(),
-        cities: [...ele.cities],
-        highlight: [...ele.highlight],
-    }))
-    return newarr;
+function filterOutAll(arr) {
+    if(arr.length<0) return [];
+    return JSON.parse(JSON.stringify(arr)); 
 }
+
+// LISTING FUNCTIONS // 
 
 export const getallListing = async (n) => {
     await connetDb();
     let arroflist;
     if (n) {
-        arroflist = await Listing.find().lean().limit(n);
-        return filterOut(arroflist);
+        arroflist = filterOutAll(await Listing.find().lean().limit(n));
     }
     else {
-        arroflist = await Listing.find().lean();
-        return filterOut(arroflist);
+        arroflist = filterOutAll(await Listing.find().lean());
     }
+    return arroflist;
 }
 
 export const getoneListing = async (id) => {
@@ -34,4 +31,28 @@ export const getoneListing = async (id) => {
        console.log({line:"34",err});
        return "";
     }
+}
+
+export const getlistingbyCondition = async(condition)=>{
+  if(!condition) return [];
+  return filterOutAll(await Listing.find(condition));
+}
+
+
+// CITIES FUNCTION // 
+
+export const getallCities=async(n)=>{
+  let cityarr;
+  if(n)
+  {
+    cityarr=filterOutAll(await City.find().lean().limit(n));
+  }else {
+    cityarr=filterOutAll(await City.find().lean());
+  }
+  return cityarr;
+}
+
+export const getcitybyCondition= async(condition)=>{
+  if(!condition) return [];
+  return filterOutAll(await City.find(condition));
 }

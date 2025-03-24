@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 const connetDb=async()=>{
   try {
-   const con = await mongoose.connect('mongodb://127.0.0.1:27017/Dribbble');
+   const con = await mongoose.connect(process.env.ATLAS_DB_URL);
    return con;
   }catch(err){
     console.log({msg:"failed to connet Db,bt this error",err});

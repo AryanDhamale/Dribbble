@@ -2,6 +2,8 @@
 import Listing from "../models/Listing.js";
 import connetDb from "@/DataBase/connetDb.js";
 import tours from "./packages.js";
+import cities from "./city.js";
+import City from "@/models/City.js";
 
 async function insertOnedoc(){
    await connetDb();
@@ -19,7 +21,8 @@ async function insertOnedoc(){
 
 async function insertManydoc(){
   await connetDb();
-  const res=await Listing.insertMany(tours);
+  //const res=await Listing.insertMany(tours);
+  const res=await City.insertMany(cities);
   console.log(res);
 }
 
