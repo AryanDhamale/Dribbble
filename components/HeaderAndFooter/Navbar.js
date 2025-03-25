@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className="bg-[ghostwhite] backdrop-blur-sm flex justify-between px-4 sm:px-8 top-0 absolute items-center h-[5rem] space-x-6  w-full z-[1] text-black"> 
        <div className="flex justify-center items-center gap-x-4">
-       <p className="text-2xl font-semibold pr-2  italic cursor-pointer flex justify-center items-center gap-x-2">Dribbble</p>
+       <p className="text-2xl text-[#872BFF] drop-shadow-lg font-semibold pr-2  italic cursor-pointer flex justify-center items-center gap-x-2">Dribbble</p>
         <ul className="flex space-x-7 font-light text-lg max-[1180px]:hidden">
           <Link href={'/'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Home</li></Link>
           <Link href={'/show-all'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Tour</li></Link>

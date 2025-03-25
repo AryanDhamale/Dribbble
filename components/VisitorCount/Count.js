@@ -5,18 +5,16 @@ import { FaMapLocationDot } from "react-icons/fa6";
 import { MdRocketLaunch } from "react-icons/md";
 
 function Count() {
-    const info=["guests fall in love with",
-        "present you the perfect vacation",
-        "enable evryone to travel the word",
-        "win hearts and make you Celebrates Life!",
-    ];
+   
     return (
-        <div className="bg-[#18181b] text-white px-20 py-12">
-            <div className="pl-4 py-6 border-l-8 border-slate-500">
-                <p className="text-base font-medium">We&apos;re curating experiences that</p>
-                <p className="text-2xl font-medium text-slate-200">{info[1]}</p>
+        <div className="bg-[#F4F4F4] text-black px-20 py-12 my-10 w-[93%] rounded-xl mx-auto">
+
+            <div className="text-center flex flex-col gap-y-4">
+                <p className="text-xl text-[#f411cf] font-medium tracking-[5px]">WE&apos;RE CURATING EXPERIENCS THAT</p>
+                <p className="text-4xl font-semibold">Prepare your self and let&apos;s explore the <br /> beautiful of the world </p>
             </div>
-            <div className="grid max-[360px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6 py-14">
+
+            <div className="text-[#872bff] grid max-[360px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6 py-14">
 
                 <div className="pl-2">
                     <IoHappyOutline className="text-4xl mb-2" />

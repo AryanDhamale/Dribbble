@@ -1,6 +1,6 @@
-import { CiSearch } from "react-icons/ci";
 import Link from "next/link";
 import Image from "next/image";
+import Searchbox from "../search/Searchbox";
 
 function Landing() {
    return (
@@ -35,12 +35,7 @@ function Landing() {
 
                </div>
 
-               <div className="py-10">
-                  <div className="w-[50%] mx-auto relative text-black">
-                     <CiSearch className="text-3xl z-[1] font-medium absolute left-3 top-1/2 -transform -translate-y-1/2 cursor-pointer" />
-                     <input className="w-full rounded-full ps-14 py-4 bg-white drop-shadow-lg outline-0" type="text" placeholder="search your Destination" />
-                  </div>
-               </div>
+               <Searchbox/>
 
             </div>
          </div>

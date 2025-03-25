@@ -2,7 +2,7 @@
 function About()
 {
     return (
-        <div>
+        <div className="mt-20 border border-red-500 min-h-[100vh]">
             This is an about page
         </div>
     );

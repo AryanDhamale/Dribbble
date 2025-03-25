@@ -11,7 +11,7 @@ function PackageCard({data})
                     <Image width={100} height={100} className="size-30 object-cover rounded-md" src={data.image} alt="this is an image" />
                 </div>
                 <div className="flex flex-col gap-y-2">
-                    <h2 className="font-semibold text-lg">{data.title}</h2>
+                    <h2 className="font-semibold text-lg truncate w-[15rem]">{data.title}</h2>
                     <p>Total <span className="underline underline-offset-1 text-blue-900">7 Reviews</span> </p>
                     <p>{data.totalDay}-Day {data.cities.length}-cities</p>
                 </div>

@@ -38,29 +38,29 @@ function Listinghead({ data }) {
 
                 <div className="flex-1 flex flex-col gap-y-4 px-3 py-4">
                     <div className="bg-[#f5f8ff] text-sm font-medium rounded-md px-1.5 py-3 border border-slate-300 drop-shadow-lg">For anyFurther more query please contact <span className="text-blue-800"> +91 8446162375</span> </div>
-
+                    
+                    {/* call us */}
                     <div className="border border-slate-300 rounded-md drop-shadow-lg py-4">
                         <div className="font-medium ps-4 py-2">
                             <p><span className="opacity-50 text-xs">Start From :</span> <span className="font-medium text-sm">&#8377; {(data.cost).toLocaleString('en-IN')}</span></p>
                             <p className="opacity-50 text-xs">per person for all</p>
                         </div>
-                        {/* <button className="bg-[#24b985] active:bg-[#24b999cc] font-medium cursor-pointer drop-shadow-lg text-white w-[90%] rounded-full block mx-auto my-2.5 py-3">Check booking</button> */}
                         <Button text={"Check booking"} width={"90%"} link="/" round={"full"} />
-
-                        {/* <div className="flex ps-4  gap-x-3">
-                        <div className="flex items-center gap-x-1.5 cursor-pointer"><FaHeart className="text-red-600" /><span>Wishlist</span></div>
-                        <div className="flex items-center gap-x-1.5 cursor-pointer"><CiShare2 /><span>Share</span></div>
-                    </div> */}
                         <LikeandShare />
-
                     </div>
 
+                    {/* for connect-us */}
                     <div className="border border-slate-300 flex flex-col gap-y-3 py-6 rounded-md drop-shadow-lg">
-                        <h2 className="text-sm opacity-60 ps-4">Do you want connet with us ? </h2>
+                        <h2 className="text-sm opacity-60 ps-4">Do you want connect with us ? </h2>
                         <input className="text-sm border border-gray-200 outline-0 w-[80%] px-2 py-2 rounded-sm block mx-auto" type="text" placeholder="Enter your Full name*" />
                         <input className="text-sm border border-gray-200 outline-0 w-[80%] px-2 py-2 rounded-sm block mx-auto" type="number" placeholder="mobile no. +91 " />
-                        {/* <button className="bg-[#24b985] active:bg-[#24b999cc] font-medium cursor-pointer drop-shadow-lg text-white w-[90%] rounded-md block mx-auto my-2.5 py-3">Connect</button> */}
                         <Button text={"Connect"} width={"90%"} round={"md"} link="/" />
+                    </div>
+
+                    {/* Reviews con  */}
+                    <div className="text-red-500 border h-50 border-slate-300 rounded-md drop-shadow-lg flex flex-col gap-y-4 items-center justify-center">
+                       <span>NO REVIEW YET</span>
+                       <span>Book now, so will the first reviewer</span>
                     </div>
 
                 </div>

@@ -48,7 +48,7 @@ function Itineary({ data }) {
         return isFirstDay ? [`Arrival, ${activites[0]}`] : activites;
     }
 
-    useEffect(() => generateItinerary(data));
+    useEffect(() => generateItinerary(data),[]);
 
     return (
         <div className="flex flex-col gap-y-4" id='itineary'>
@@ -62,7 +62,7 @@ function Itineary({ data }) {
                                 aria-controls="panel1-content"
                                 id="panel1-header"
                             >
-                                <h2 className='text-lg font-medium flex'> <span className='block w-[6rem]'>{ele.city}</span> Day-{ele.day}</h2>
+                                <h2 className='text-lg font-medium flex'> <span className='block w-[6rem] truncate'>{ele.city}</span> Day-{ele.day}</h2>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <div className='flex flex-col gap-y-2'>

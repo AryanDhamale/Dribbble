@@ -13,7 +13,7 @@ function PopularCard({data})
             </div>
             <div className="px-3 py-3 flex flex-col gap-y-2">
                 <p className="text-xs font-basic opacity-50">{data.location}</p>
-                <p className="text-base font-medium text-[#24b985]">{data.title}</p>
+                <p className="text-base font-medium w-[16rem] truncate text-[#872BFF]">{data.title}</p>
                 <div className="flex justify-start items-center">
                  <IoIosStar className="text-orange-500"/>
                  <span className="ps-0.5"> {data.cities.length}({data.totalDay} review)</span>
