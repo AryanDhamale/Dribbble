@@ -1,4 +1,5 @@
 import {models,model,Schema} from "mongoose";
+import Listing from "./Listing";
 
 const userSchema=new Schema({
     name : {
@@ -9,20 +10,31 @@ const userSchema=new Schema({
         type : String,
         required:true ,
     },
-    dob :  {
-        type : String,
-        required:true ,
-    },
-    address :  {
-        type : String,
-    },
     mobileNo :  {
         type : String,
     },
     profilePic :  {
-        type : String,
-        required:true ,
+        type : String, 
     },
+    password :{
+        type : String ,
+        default : ''
+    },
+    email_verified : {
+        type : Boolean , 
+        default : false, 
+    },
+    mobile_verified : {
+        type : Boolean , 
+        default : false, 
+    },
+    gender : {
+        type: String,
+        enum : ['male','female','other']
+    },
+    wishlist : [{type:Schema.Types.ObjectId,ref:"Listing"}],
+    booking : [{type:Schema.Types.ObjectId,ref:"Booking"}]
+    
 });
 
 

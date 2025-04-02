@@ -13,22 +13,22 @@ function Listinginfo({data}) {
     return (
         <div className="w-full">
             
-                <div className="px-14 py-3 flex items-center gap-x-4 font-medium text-base sticky top-0 border-1 border-slate-200 bg-white drop-shadow-lg z-[1]">
+                <div className="px-2 md:px-14 py-3 flex items-center gap-x-4 font-medium text-sm md:text-base sticky top-0 border-1 border-slate-200 bg-white drop-shadow-lg z-[1]">
                     <Link href={"#itineary"}>itineary</Link>
                     <Link href={"#information"}>tour informaiton</Link>
                     <Link href={"#policy"}>Policy & Payment Terms</Link>
                     <Link href={"#mapbox"}>Map</Link>
                 </div>
 
-                <div className="w-[90%] mx-auto">
+                <div className="w-full md:w-[90%] mx-auto">
 
-                <div className="w-[75%] flex flex-col gap-y-6 py-6" id="information">
+                <div className="w-[95%] mx-auto md:mx-0 md:w-[75%] flex flex-col gap-y-6 py-6" id="information">
                     
                     <Itineary data={data}/>
 
                     <div className="flex flex-col gap-y-4" id="information">
                         <h2 className="text-lg font-medium mt-4">Tour information</h2>
-                        <div className="font-medium px-2 py-2 grid grid-cols-2 gap-x-3 w-[50%]">
+                        <div className="font-medium px-2 py-2 grid grid-cols-2 gap-x-3 w-full sm:w-[50%]">
                             <button onClick={() => setclusion("inclusion")} className={clusion == "inclusion" ? commonBtn + "text-white bg-[#24b985]" : commonBtn}>Our inclusion</button>
                             <button onClick={() => setclusion("exclusion")} className={clusion == "exclusion" ? commonBtn + "text-white bg-[#24b985]" : commonBtn}>Our Exclusion</button>
                         </div>

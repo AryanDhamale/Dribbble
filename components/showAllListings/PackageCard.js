@@ -21,7 +21,7 @@ function PackageCard({data})
                <p className="text-lg">Total price  : <span className="font-bold">&#8377; {(data.cost).toLocaleString('en-IN')}</span></p>
                <p className="text-xs font-medium opacity-50">the give above will apply per person</p>
                <div>
-               <LikeandShare/>
+               <LikeandShare id={data._id}/>
                </div>
                <Button text={"see more"} round="sm" link={`/package/${data._id}`} width={"80%"}/>
             </div>

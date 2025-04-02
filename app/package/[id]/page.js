@@ -5,7 +5,7 @@ import { getoneListing } from "@/serverAction/action";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 import Loading from "@/components/loader/loading";
-
+import Bookingcon from "@/components/Booking/Bookingcon";
 
 function Package({ params }) {
       const [Listing, setListing] = useState({});
@@ -40,8 +40,9 @@ function Package({ params }) {
 
     return (
         <>
-            <div className="mt-25">
+            <div className="mt-20">
                 <Listinghead data={Listing} />
+                <Bookingcon data={Listing}/>
                 <Listinginfo data={Listing}/>
             </div>
         </>

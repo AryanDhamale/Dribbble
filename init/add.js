@@ -1,6 +1,6 @@
 "use server";
 import Listing from "../models/Listing.js";
-import connetDb from "@/DataBase/connetDb.js";
+import connetDb from "@/lib/connetDb.js";
 import tours from "./packages.js";
 import cities from "./city.js";
 import City from "@/models/City.js";

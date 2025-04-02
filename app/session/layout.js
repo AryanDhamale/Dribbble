@@ -8,7 +8,7 @@ export const metadata = {
 export default function LoginLayout({ children }) {
     return (
         <div className="w-full h-screen overflow-hidden flex">
-            <div className="flex-1 relative">
+            <div className="hidden md:block flex-1 relative">
                 <div className="bg-[#0000002e] text-white absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center">
                     <Link href={'/'}><h3 className="absolute top-8 left-9 text-2xl font-medium italic">Dribbble</h3></Link>
                     <div className="w-[80%] flex flex-col gap-y-3">

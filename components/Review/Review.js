@@ -14,7 +14,7 @@ function Review() {
     return (
         <div className="text-black py-10">
             <p className="text-lg mb-1 font-medium text-center tracking-[5px] text-[#f411cf]">TESTIMONIALS</p>
-            <p className="text-4xl font-semibold text-center">Trust Out Clients</p>
+            <p className="text-xl md:text-4xl font-semibold text-center">Trust Out Clients</p>
             <div className="py-3.5 w-[90%] mx-auto">
                 <Carousel
                     opts={{

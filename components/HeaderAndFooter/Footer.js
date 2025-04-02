@@ -1,15 +1,15 @@
 function Footer()
 {
     return (
-            <div className="flex justify-between bg-[ghostwhite] px-30 py-16">
-                <div className="pl-3.5 ">
+            <div className="flex justify-between bg-[ghostwhite] gap-y-6 px-30 py-16 flex-wrap">
+                <div className="pl-3.5">
                     <p className="text-2xl font-semibold italic cursor-pointer py-2">Dribbble</p>
                     <p className="text-xl font-semibold opacity-50">Keep travelling all year round!</p>
                     <p className="text-xl opacity-50">Subscribe to our newsletter to find travel inspiration in your inbox.</p>
                     <p className="text-xl opacity-50">All Rights Reserved &copy; Dribbble 2025</p>
                 </div>
                 
-                <div className="flex gap-x-30">
+                <div className="flex gap-x-30 flex-wrap gap-y-6">
 
                   <div>
                   <h2 className="text-2xl font-semibold  mb-5">About</h2>

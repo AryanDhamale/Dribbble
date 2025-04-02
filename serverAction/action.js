@@ -1,5 +1,5 @@
 "use server";
-import connetDb from "@/DataBase/connetDb";
+import connetDb from "@/lib/connetDb";
 import Listing from "@/models/Listing";
 import City from "@/models/City";
 
@@ -28,13 +28,14 @@ export const getoneListing = async (id) => {
         const list = await Listing.findById(id);
         return list.toObject({ flattenObjectIds: true });
     } catch (err) {
-       console.log({line:"34",err});
+       //console.log({line:"34"});
        return "";
     }
 }
 
 export const getlistingbyCondition = async(condition)=>{
   if(!condition) return [];
+  await connetDb();
   return filterOutAll(await Listing.find(condition));
 }
 
@@ -43,6 +44,7 @@ export const getlistingbyCondition = async(condition)=>{
 
 export const getallCities=async(n)=>{
   let cityarr;
+  await connetDb();
   if(n)
   {
     cityarr=filterOutAll(await City.find().lean().limit(n));
@@ -54,5 +56,6 @@ export const getallCities=async(n)=>{
 
 export const getcitybyCondition= async(condition)=>{
   if(!condition) return [];
+  await connetDb();
   return filterOutAll(await City.find(condition));
 }

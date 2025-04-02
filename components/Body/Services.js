@@ -7,9 +7,9 @@ import { BsExclude } from "react-icons/bs";
 
 function Services() {
     return (
-        <div className="px-4 md:px-20 flex flex-col gap-y-14 py-10">
+        <div className="px-4 md:px-20 flex flex-col gap-y-14 py-10" id="services">
             <div>
-                <h2 className="text-3xl font-normal text-[#f411cf] tracking-widest">Services</h2>
+                <h2 className="text-xl md:text-3xl font-normal text-[#f411cf] tracking-widest">Services</h2>
             </div>
     
             <div className="flex justify-center items-center flex-wrap gap-x-10 gap-y-8">

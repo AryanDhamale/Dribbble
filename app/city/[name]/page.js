@@ -32,14 +32,14 @@ function City({params})
   }
 
   return (
-    <div className="mt-26 border">
-       <div className="h-35 flex items-center bg-[ghostwhite]"> 
+    <div>
+       <div className="mt-20 h-35 flex items-center bg-[ghostwhite]"> 
          <h2 className="px-10 text-black drop-shadow-lg text-4xl font-semibold">Location - {city}</h2>
        </div>
        <Filter/>
-       <div className="w-[90%] mx-auto px-6 py-6 flex justify-start items-center flex-wrap gap-y-6 gap-x-12">
+       <div className="w-[90%] min-h-[100vh] mx-auto px-6 py-6 flex justify-start items-center flex-wrap gap-y-6 gap-x-12">
         {
-          cities.length ? cities.map((ele,idx)=><PackageCard key={idx} data={ele}/>) : <div className="flex justify-center items-center text-2xl">Not Found</div>
+          cities.length ? cities.map((ele,idx)=><PackageCard key={idx} data={ele}/>) : <div className="w-full h-full flex justify-center items-center text-2xl">Not Found</div>
         }
         </div>
     </div>

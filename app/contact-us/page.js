@@ -2,12 +2,12 @@ import Image from "next/image";
 
 function ContactUs() {
    return (
-      <div className="mt-25 min-h-[100vh]">
+      <div className="mt-20 min-h-[100vh]">
 
-         <div className="h-80 bg-[#ffbe0b]">
-            <div className="w-full h-full flex items-center justify-evenly">
+         <div className="h-auto py-4 md:h-80 bg-[#ffbe0b]">
+            <div className="w-full h-full flex flex-wrap items-center justify-evenly">
                <div className="flex flex-col gap-y-8">
-                  <h2 className="font-bold text-6xl drop-shadow-lg">How can we help <br /> you today?</h2>
+                  <h2 className="font-bold text-xl md:text-6xl drop-shadow-lg">How can we help <br /> you today?</h2>
                   <span className="drop-shadow-lg text-lg">Welcom to <span className="italic font-medium">Dribbble</span> help center</span>
                </div>
                <div>
@@ -19,7 +19,7 @@ function ContactUs() {
 
          </div>
 
-         <div className="w-[80%] mx-auto mt-24 mb-20 grid grid-cols-2 gap-x-6 gap-y-10">
+         <div className="w-[95%] md:w-[80%] mx-auto mt-24 mb-20 grid grid-col-1 md:grid-cols-2 gap-x-6 gap-y-10">
 
             <div className="group border border-slate-200 rounded-xl flex flex-col items-center gap-y-4 py-4 px-4 bg-white drop-shadow-lg hover:drop-shadow-[0_6px_10px_#e35b66] cursor-pointer">
                <div>

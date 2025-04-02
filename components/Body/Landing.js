@@ -2,21 +2,25 @@ import Link from "next/link";
 import Image from "next/image";
 import Searchbox from "../search/Searchbox";
 
-function Landing() {
+
+function Landing() { 
+   
    return (
       <>
-         <div className={`min-h-[100vh] pt-20 bg-[ghostwhite]`}>
+         <div className={`min-h-[100vh] bg-[ghostwhite] mt-20`}>
 
-            <div className="mt-10 sm:mt-20 flex flex-col justify-center gap-y-7 relative z-[0]">
+            <div className="pt-10 md:pt-14 flex flex-col justify-center gap-y-7">
 
-               <div className="px-14 py-4 grid grid-cols-2 gap-x-6">
+               <div className="px-1.5 sm:px-14 py-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 md:gap-y-0">
                <div className="flex flex-col gap-y-4">
                   <p className="font-medium text-xl drop-shadow-lg sm:text-6xl">Your Next Adventure Starts Here</p>
                   <p className="text-lg font-medium sm:text-4xl drop-shadow-lg text-[#f411cf]">Bright your future with <span className="italic">Dribbble</span> </p>
                   <p className="opacity-70">Stay updated wtih travel tips, recommendations, and latest promos</p>
-                  <div className="mt-6">
-                     <button className="drop-shadow-lg text-black transition delay-150 duration-100 ease-in-out border border-[#872bff] cursor-pointer hover:bg-[#872bffd3] hover:text-white hover:border-transparent px-8 py-2 font-medium text-base rounded-full tracking-wide ml-4"><Link href="#services">SERVICES</Link></button>
-                     <button className="drop-shadow-lg cursor-pointer text-white bg-[#872bff] px-8 py-2 font-medium text-base rounded-full tracking-wide ml-4"><Link href={'/about'}>ABOUT US</Link></button>
+                  <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-4">
+                     <Link href="#services">
+                     <button className="drop-shadow-lg text-black transition delay-150 duration-100 ease-in-out border border-[#872bff] cursor-pointer hover:bg-[#872bffd3] hover:text-white hover:border-transparent px-8 py-2 font-medium rounded-full tracking-wide text-sm sm:text-base">SERVICES</button></Link>
+                     <Link href={'/about'}>
+                     <button className="drop-shadow-lg cursor-pointer text-white bg-[#872bff] px-8 py-2 font-medium rounded-full tracking-wide text-sm sm:text-base">ABOUT US</button></Link>
                   </div>
                </div>
 
@@ -36,7 +40,6 @@ function Landing() {
                </div>
 
                <Searchbox/>
-
             </div>
          </div>
       </>

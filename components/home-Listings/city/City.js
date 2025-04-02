@@ -12,10 +12,10 @@ function City({responce}) {
         <div className="bg-[#f5f8ff] py-14">
             <div className= "px-4 md:px-20 flex flex-col gap-y-4">
                 <div>
-                    <h2 className="text-3xl font-normal text-[#f411cf] tracking-wider">City Tour</h2>
-                    {/* <div className="mt-1 bg-[#24b985] h-1.5 w-20"></div> */}
+                    <h2 className="text-xl md:text-3xl font-normal text-[#f411cf] tracking-wider">City Tour</h2>
+                    
                 </div>
-                <p className="font-medium opacity-50">No matter where you are in India or around the World, Choose from a wide range of tours, conveniently departing from your city.</p>
+                <p className="font-normal md:font-medium opacity-50">No matter where you are in India or around the World, Choose from a wide range of tours, conveniently departing from your city.</p>
                 <p className="font-medium text-xs text-slate-500">Explore tour packages from</p>
             </div>
             <div className="mt-4 w-[98%] lg:w-[90%] mx-auto">

@@ -29,16 +29,12 @@ const listingSchema = new Schema({
         type: [String],
         min : 3
     },
-    // itinerary : {
-    //     type  : [{
-    //         date : Number , 
-    //         city : String,
-    //         activities : [{type:String}],
-    //         accommodation : String ,
-    //         meals : [String]
-    //     }],
-    //     default : []
-    // }
+    totalPerson : {
+        type : Number,
+        min : 1,
+        max : 10 ,
+        required : true
+    }
 });
 
 export default models.Listing || model("Listing", listingSchema);
