@@ -45,7 +45,7 @@ function LikeandShare({id}) {
             }
         }
         check();
-    }, [])
+    }, [id,session])
 
     return (
         <div className="flex ps-4  gap-x-3">

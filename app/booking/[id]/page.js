@@ -35,7 +35,7 @@ function Booking({ params }) {
       }
     }
     getQuery();
-  }, [params]);
+  }, [params,searchParams]);
 
   if (!data.beforeDate || !data.afterDate || !data.totalPerson || !data.id) {
     return <Message msg={'Not Found'} />

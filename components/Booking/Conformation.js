@@ -87,7 +87,7 @@ function Conformation({ data, listing }) {
     return (
         <>
             <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
-            <div className="min-h-[100vh]">
+            <div className="mt-22 min-h-[100vh]">
                 <div className="border border-slate-300 bg-white drop-shadow-lg rounded-xl w-[95%] md:w-[70%] mx-auto mt-2 relative ">
                     <div className="w-full h-full flex flex-col gap-y-4 px-8 py-4">
 
@@ -100,7 +100,7 @@ function Conformation({ data, listing }) {
                                         listing.cities.map((ele, idx) => `${ele}--- `)
                                     }
                                 </li>
-                                <li className="font-medium"><span>Note:</span> The highlights and sightseeing`'s may change depending on the departure date you choose </li>
+                                <li className="font-medium"><span>Note:</span> The highlights and sightseeing&apos;s may change depending on the departure date you choose </li>
                             </ul>
                         </div>
 
@@ -121,7 +121,7 @@ function Conformation({ data, listing }) {
                         <div className="border-b border-slate-200 py-4 flex flex-col gap-y-3">
                             <h2 className="text-base">Total peroson in this tour :- {data.totalPerson}</h2>
                             <p className="text-base font-medium"><span className="text-green-400">&#8377; {(listing.cost).toLocaleString('en-IN')}</span> * {data.totalPerson}  </p>
-                            <p className="text-lg font-medium text-red-400">Once you Book, we'll handle the rest</p>
+                            <p className="text-lg font-medium text-red-400">Once you Book, we&apos;ll handle the rest</p>
                             <ul className="text-sm font-medium flex flex-col gap-y-2">
                                 <li className="flex items-center gap-x-1.5"><LuCircleDotDashed className="text-green-400" /> After your payment is compelete , Dribbble advisor will get in touch with you to complete your booking.</li>
                                 <li className="flex items-center gap-x-1.5"><LuCircleDotDashed className="text-green-400" />Complete detials of all travellers including a copy of the valid ID proofs.</li>

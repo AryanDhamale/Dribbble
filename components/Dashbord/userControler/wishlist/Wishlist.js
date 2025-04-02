@@ -38,7 +38,7 @@ function Wishlist({session}) {
 
     useEffect(()=>{
       fetchData();
-    },[]);
+    },[session]);
 
     return (
         <div className="w-full h-full overflow-auto py-4 flex flex-col gap-y-4">
