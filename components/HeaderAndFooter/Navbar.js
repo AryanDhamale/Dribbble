@@ -6,16 +6,19 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import Sidenav from "./sidenav/Sidenav";
+import { useSelector, useDispatch } from 'react-redux';
+import { setVisible } from "@/redux/sidenavcontrols/sideNavcontrolSlice";
 
 function Navbar() {
   const {data:session}=useSession();
   const [dropvisible,setdropvisible]=useState(false);
-  const [sidenav,setsidenav]=useState(false);
+  const visibleNav=useSelector((state)=>state.sideNavcontrol.value)
+  const dispatch=useDispatch();
 
 
   return (
-    <nav className="absolute top-0 flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
-       {sidenav && <Sidenav control={setsidenav}/>}
+    <nav className="absolute z-[10] top-0 flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
+       {visibleNav && <Sidenav/>}
        <div className="flex justify-center items-center gap-x-4">
       <Link href={'/'}>
       {/* text-[#872BFF] */}
@@ -46,7 +49,7 @@ function Navbar() {
 
       <div className="flex md:hidden items-center gap-x-4">
       {/* <IoSearchOutline className="text-black text-lg"/> */}
-      <FaBars onClick={()=>setsidenav(true)} className="text-black text-lg"/>
+      <FaBars onClick={()=>dispatch(setVisible())} className="text-black text-lg"/>
       </div>
 
     </nav>

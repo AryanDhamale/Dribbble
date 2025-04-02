@@ -215,7 +215,7 @@ function Bookingcon({ data }) {
                             <div className="py-6 grid grid-cols-2 gap-x-4">
                                 <AlertDialog>
                                     <AlertDialogTrigger asChild>
-                                    <button className="bg-red-400 drop-shadow-md text-white px-4 py-2 rounded-md flex items-center gap-x-1.5 cursor-pointer"> <MdCall /> <span>Book on call</span></button>
+                                    <button className="bg-red-400 drop-shadow-md text-white px-4 py-2 rounded-md flex items-center gap-x-1.5 cursor-pointer"> <MdCall className="hidden sm:block"/> <span>Book on call</span></button>
                                     </AlertDialogTrigger>
                                     <AlertDialogContent>
                                         <AlertDialogHeader>

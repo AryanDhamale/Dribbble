@@ -20,16 +20,20 @@ import Link from "next/link";
 
 import { useSession } from "next-auth/react";
 import { GiCrossMark } from "react-icons/gi";
+import { useDispatch } from 'react-redux';
+import { setVisible } from "@/redux/sidenavcontrols/sideNavcontrolSlice";
+import { Button } from "@/components/ui/button"
 
 
-function Sidenav({control}) {
+function Sidenav() {
     const {data:session}=useSession();
+    const dispatch=useDispatch();
     return (
         <div className="bg-white w-[100%] left-0 top-0 h-screen fixed z-[10]">
 
-           <div className="w-full h-20 flex items-center justify-between px-3">
+           <div className="w-full h-20 flex items-center justify-between px-6">
             <p className="text-[#00ddb3] font-medium italic drop-shadow-lg text-2xl">Dribbble</p>
-            <GiCrossMark onClick={()=>control(false)} className="text-2xl text-red-500"/>
+            <GiCrossMark onClick={()=>dispatch(setVisible())} className="text-2xl text-red-500"/>
            </div>
 
             {session && <div className="w-[96%] rounded-xl mx-auto bg-white drop-shadow-[0_1px_14px_#00ddb3]  px-6 ">
@@ -45,7 +49,7 @@ function Sidenav({control}) {
                             </div>
                         </AccordionTrigger>
                         <AccordionContent>
-                            <ul onClick={()=>control(false)} className="ps-4 flex flex-col gap-y-3 text-base font-medium"> 
+                            <ul onClick={()=>dispatch(setVisible())} className="ps-4 flex flex-col gap-y-3 text-base font-medium"> 
                                 <Link href={'/dashboard?section=account'}><li className="flex items-center gap-x-2"><MdDashboard className="text-xl text-[#00ddb3]"/> Account</li></Link>
                                 <Link href={'/dashboard?section=booking'}><li className="flex items-center gap-x-2"><CiBookmark className="text-xl text-blue-500"/> Bookings</li></Link>
                                 <Link href={'/dashboard?section=wishlist'}><li className="flex items-center gap-x-2"><FaHeart className="text-xl text-red-500"/>Wishlist</li></Link>
@@ -56,8 +60,13 @@ function Sidenav({control}) {
                 </Accordion>
             </div>}
 
+            {!session && <div onClick={()=>dispatch(setVisible())} className="px-5 flex gap-x-4">
+               <Link href={'/session/new'}><Button variant="outline">Sign up </Button></Link>
+               <Link href={'/session'}><Button>Login</Button></Link>
+            </div>}
+
             <div className="mt-5">
-                <ul onClick={()=>control(false)} className="flex flex-col gap-y-3 font-medium">
+                <ul onClick={()=>dispatch(setVisible())} className="flex flex-col gap-y-3 font-medium">
                     <Link href={'/'}>
                     <li className="text-slate-800 flex items-center gap-x-2 active:bg-blue-50 rounded-md w-[97%] mx-auto px-3 py-3"><AiFillAliwangwang className="text-xl"/> <span className="text-lg">Home</span> </li></Link>
 

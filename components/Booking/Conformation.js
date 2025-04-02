@@ -39,6 +39,10 @@ function Conformation({ data, listing }) {
     const payment = async (cost) => {
         try {
             let { user } = await findUser(session.user.id);
+            if(user.email!=='aryandhamale07@gmail.com' || (!user.email_verified || !user.mobile_verified)){
+                toast("Please verify yourself first !");
+                return; 
+            }
             if(checkState) {
                 toast("you can't book this now , as all booking has done!");
                 return;
@@ -57,8 +61,6 @@ function Conformation({ data, listing }) {
                 toast("faild to append order_id");
                 return ;
             }
-            // booking.oid=x.id;
-            // await booking.save();
             const options = {
                 key: process.env.NEXT_PUBLIC_RAYZORPAY_ID, // Replace with your Razorpay key_id
                 amount: cost * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -88,7 +90,7 @@ function Conformation({ data, listing }) {
         <>
             <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
             <div className="mt-22 min-h-[100vh]">
-                <div className="border border-slate-300 bg-white drop-shadow-lg rounded-xl w-[95%] md:w-[70%] mx-auto mt-2 relative ">
+                <div className="border border-slate-300 bg-white drop-shadow-lg rounded-xl w-[95%] md:w-[70%] mx-auto mt-2">
                     <div className="w-full h-full flex flex-col gap-y-4 px-8 py-4">
 
                         <div className="border-b border-slate-200 py-4">
