@@ -15,11 +15,11 @@ function Navbar() {
 
   return (
     <nav className="absolute top-0 flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
-       {/* <Sidenav/> */}
+       {sidenav && <Sidenav control={setsidenav}/>}
        <div className="flex justify-center items-center gap-x-4">
       <Link href={'/'}>
       {/* text-[#872BFF] */}
-       <p className="text-2xl text-[#00ddb3] drop-shadow-lg font-semibold pr-2  italic cursor-pointer flex justify-center items-center gap-x-2">Dribbble</p></Link>
+       <p className="text-2xl text-[#00ddb3] drop-shadow-lg font-semibold pr-2  italic cursor-pointer">Dribbble</p></Link>
         <ul className="flex space-x-7 font-light text-lg max-[1180px]:hidden">
           <Link href={'/'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Home</li></Link>
           <Link href={'/show-all'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Tour</li></Link>
@@ -45,8 +45,8 @@ function Navbar() {
       </div>
 
       <div className="flex md:hidden items-center gap-x-4">
-      <IoSearchOutline className="text-black text-lg"/>
-      <FaBars className="text-black text-lg"/>
+      {/* <IoSearchOutline className="text-black text-lg"/> */}
+      <FaBars onClick={()=>setsidenav(true)} className="text-black text-lg"/>
       </div>
 
     </nav>

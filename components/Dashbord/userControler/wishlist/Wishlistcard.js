@@ -9,27 +9,22 @@ function Wishlistcard({data,remove}) {
     return (
         <div className="border border-slate-200 bg-white drop-shadow-lg rounded-2xl px-2 py-2 w-[98%] mx-auto flex gap-x-4">
 
-            <Image className="size-30 object-cover rounded-md" width={100} height={100} src={data.image} alt="this is an image" />
+            <Image className="my-auto sm:my-0 size-15 sm:size-30 object-cover rounded-md" width={100} height={100} src={data.image} alt="this is an image" />
             <div className="flex-1 flex justify-between px-4 items-center">
                 <div>
 
-                    <h2 className="font-medium text-lg">{data.title}</h2>
+                    <h2 className="font-medium text-base truncate w-[13rem] sm:w-auto sm:text-lg">{data.title}</h2>
                     <div className="flex flex-col gap-y-0.5">
-                        <p className="font-medium"><span className="opacity-50">Start-from </span>: <span className="font-bold">&#8377; {(data.cost).toLocaleString('en-IN')}</span> </p>
-                        <p className="font-light opacity-50 text-sm">per person will apply</p>
-                        <p className="font-medium text-sm">{data.totalDay}-Day {data.cities.length}-cities</p>
-                        <p className="font-medium text-xs">
-                            {/* {
-                                data.cities.map((ele,idx)=>`${ele}---`)
-                            } */}
-                        </p>
+                        <p className="font-medium text-sm sm:text-base"><span className="opacity-50">Start-from </span>: <span className="font-bold">&#8377; {(data.cost).toLocaleString('en-IN')}</span> </p>
+                        <p className="font-light opacity-50 text-xs sm:text-sm">per person will apply</p>
+                        <p className="font-medium text-xs sm:text-sm">{data.totalDay}-Day {data.cities.length}-cities</p>
                     </div>
                 </div>
 
                 <div className="flex items-center gap-x-2">
                     <Link href={`/package/${data._id}`}>
-                    <button className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full px-5 py-2 flex gap-x-2 items-center"><span>Check</span><GoChevronRight /></button></Link>
-                    <button onClick={()=>remove(data._id)} className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full px-5 py-2 flex gap-x-2 items-center"><AiTwotoneDelete /> <span>Remove</span></button>
+                    <button className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full px-3 py-1 text-sm sm:text-base sm:px-5 sm:py-2 flex gap-x-2 items-center"><span>Check</span><GoChevronRight /></button></Link>
+                    <button onClick={()=>remove(data._id)} className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full text-sm sm:text-base px-3 py-1 sm:px-5 sm:py-2 flex gap-x-2 items-center"><AiTwotoneDelete /> <span>Remove</span></button>
                 </div>
 
             </div>

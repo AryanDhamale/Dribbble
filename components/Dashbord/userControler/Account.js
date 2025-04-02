@@ -34,9 +34,11 @@ function Account({ session }) {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await findUser(session.user.id);
-      if (res.success) {
-        setuserdata(res.user);
+      if (session) {
+        let res = await findUser(session.user.id);
+        if (res.success) {
+          setuserdata(res.user);
+        }
       }
     }
     fetchData();
@@ -68,7 +70,7 @@ function Account({ session }) {
   }
   return (
     <div className="w-full h-full flex items-center">
-      <Card className={'mx-4 w-[40%]'}>
+      <Card className={'mx-4 w-[98%] md:w-[70%] lg:w-[40%]'}>
         <CardHeader>
           <CardTitle className={'text-2xl font-medium'}>Acccount details </CardTitle>
           <CardDescription className={'text-red-400'}>all field are required !</CardDescription>

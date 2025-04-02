@@ -13,9 +13,6 @@ const userSchema=new Schema({
     mobileNo :  {
         type : String,
     },
-    profilePic :  {
-        type : String, 
-    },
     password :{
         type : String ,
         default : ''

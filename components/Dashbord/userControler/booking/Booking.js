@@ -1,6 +1,5 @@
 "use client";
 import { useState , useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { findAllbooking } from "@/serverAction/user";
 import Bookingcard from "./Bookingcard";
 import { memo } from "react";
@@ -8,7 +7,6 @@ import { memo } from "react";
 function Booking({session})
 {
     const [data,setdata]=useState([]);
-    //const {data:session} = useSession();
 
     const fetchData=async()=>{
       if(session){

@@ -1,7 +1,6 @@
 "use client";
 import Wishlistcard from "./Wishlistcard";
 import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { findUserWishlist } from "@/serverAction/user";
 import { removeWishlist } from "@/serverAction/wishlist";
 import { toast } from "sonner";
@@ -9,7 +8,6 @@ import { memo } from "react";
 
 function Wishlist({session}) {
     const [data, setdata] = useState([]);
-    //const { data: session } = useSession();
 
     async function fetchData()
     {
