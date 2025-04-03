@@ -1,10 +1,9 @@
 "use client";
-
 import Filter from "@/components/showAllListings/Filter";
 import PackageCard from "@/components/showAllListings/PackageCard";
-import Loading from "@/components/loader/loading";
 import { getallListing } from "@/serverAction/action";
 import { useEffect, useState } from "react";
+const Loading = dynamic(() => import("@/components/loader/loading"), { ssr: false });
 
 
 function All() {
