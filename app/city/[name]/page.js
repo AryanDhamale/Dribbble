@@ -1,6 +1,6 @@
 "use client";
 import Filter from "@/components/showAllListings/Filter";
-import Loading from "@/components/loader/loading";
+import Loading from "@/components/loader/CustomeLoading";
 import { useState,useEffect } from "react";
 import { notFound } from "next/navigation";
 import PackageCard from "@/components/showAllListings/PackageCard";

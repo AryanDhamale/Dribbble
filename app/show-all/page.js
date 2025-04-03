@@ -3,7 +3,7 @@ import Filter from "@/components/showAllListings/Filter";
 import PackageCard from "@/components/showAllListings/PackageCard";
 import { getallListing } from "@/serverAction/action";
 import { useEffect, useState } from "react";
-import Loading from "@/components/loader/loading";
+import Loading from "@/components/loader/CustomeLoading";
 
 
 function All() {

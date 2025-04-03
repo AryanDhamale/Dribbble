@@ -4,7 +4,7 @@ import Listinginfo from "@/components/package-Listing/Listinginfo";
 import { getoneListing } from "@/serverAction/action";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
-import Loading from "@/components/loader/loading";
+import Loading from "@/components/loader/CustomeLoading";
 import Bookingcon from "@/components/Booking/Bookingcon";
 
 function Package({ params }) {
