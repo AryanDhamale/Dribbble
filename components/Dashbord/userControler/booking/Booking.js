@@ -25,7 +25,15 @@ function Booking({session,message,oid})
       fetchData();
       if(message)
       setSuccess(true);
-    },[])
+    },[]);
+
+      useEffect(() => {
+        // Ensure this code runs only on the client side
+        if (typeof document !== "undefined") {
+          console.log("Document is accessible:", document.title);
+          // Add any document-related logic here
+        }
+      }, []);
     return (
         <>
         {success && <Success control={setSuccess} oid={oid}/> }

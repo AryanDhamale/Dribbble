@@ -2,10 +2,18 @@
 import Lottie from "lottie-react";
 import success from "@/components/lottieJSON/success.json"
 import sign from "@/components/lottieJSON/sign.json"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 function Success({control,oid})
 {
+    useEffect(() => {
+        // Ensure this code runs only on the client side
+        if (typeof document !== "undefined") {
+          console.log("Document is accessible:", document.title);
+          // Add any document-related logic here
+        }
+      }, []);
     return (
         <div className="bg-[#332b2b94] w-full h-screen fixed top-0 left-0 bottom-0 right-0 z-[1]">
             <Lottie className="relative w-full h-full" animationData={success}/>

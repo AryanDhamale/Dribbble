@@ -40,6 +40,14 @@ function Wishlist({session}) {
       fetchData();
     },[session]);
 
+      useEffect(() => {
+        // Ensure this code runs only on the client side
+        if (typeof document !== "undefined") {
+          console.log("Document is accessible:", document.title);
+          // Add any document-related logic here
+        }
+      }, []);
+
     return (
         <div className="w-full h-full overflow-auto py-4 flex flex-col gap-y-4">
 
