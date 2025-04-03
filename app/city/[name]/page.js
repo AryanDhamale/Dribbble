@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import PackageCard from "@/components/showAllListings/PackageCard";
 import { getlistingbyCondition } from "@/serverAction/action";
 import Lottie from "lottie-react";
-import notfound from "@/components/lottieJSON/notFound.json";
+import notfound from "@/components/lottieJSON/notfound.json";
 
 
 function City({params})
