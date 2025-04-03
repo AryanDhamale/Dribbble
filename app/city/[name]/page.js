@@ -1,6 +1,7 @@
 "use client";
 import Filter from "@/components/showAllListings/Filter";
-import Loading from "@/components/loader/loading";
+import dynamic from "next/dynamic";
+const Loading = dynamic(() => import("@/components/loader/loading"), { ssr: false });
 import { useState,useEffect } from "react";
 import { notFound } from "next/navigation";
 import PackageCard from "@/components/showAllListings/PackageCard";
