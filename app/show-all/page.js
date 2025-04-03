@@ -23,17 +23,10 @@ function All() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    // Ensure this code runs only on the client side
-    if (typeof document !== "undefined") {
-      console.log("Document is accessible:", document.title);
-      // Add any document-related logic here
-    }
-  }, []);
-
   if (loader) {
     return <Loading />;
   }
+  
   return (
     <div className="mt-20 pb-8 w-full mx-auto">
       <Filter />

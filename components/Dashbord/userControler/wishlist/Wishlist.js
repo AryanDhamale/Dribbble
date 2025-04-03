@@ -5,7 +5,8 @@ import { findUserWishlist } from "@/serverAction/user";
 import { removeWishlist } from "@/serverAction/wishlist";
 import { toast } from "sonner";
 import { memo } from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import norecord from "@/components/lottieJSON/norecord.json"
 
 function Wishlist({session}) {
@@ -39,14 +40,6 @@ function Wishlist({session}) {
     useEffect(()=>{
       fetchData();
     },[session]);
-
-      useEffect(() => {
-        // Ensure this code runs only on the client side
-        if (typeof document !== "undefined") {
-          console.log("Document is accessible:", document.title);
-          // Add any document-related logic here
-        }
-      }, []);
 
     return (
         <div className="w-full h-full overflow-auto py-4 flex flex-col gap-y-4">

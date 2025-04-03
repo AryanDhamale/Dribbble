@@ -3,7 +3,8 @@ import { useState , useEffect } from "react";
 import { findAllbooking } from "@/serverAction/user";
 import Bookingcard from "./Bookingcard";
 import { memo } from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import norecord from "@/components/lottieJSON/norecord.json";
 import Success from "@/components/Success/Success";
 
@@ -27,13 +28,6 @@ function Booking({session,message,oid})
       setSuccess(true);
     },[]);
 
-      useEffect(() => {
-        // Ensure this code runs only on the client side
-        if (typeof document !== "undefined") {
-          console.log("Document is accessible:", document.title);
-          // Add any document-related logic here
-        }
-      }, []);
     return (
         <>
         {success && <Success control={setSuccess} oid={oid}/> }
