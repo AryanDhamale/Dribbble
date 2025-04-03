@@ -23,7 +23,7 @@ function Login() {
     return (
         <div className="w-full md:w-[69%] drop-shadow-lg flex justify-center items-center">
             <div className="w-[90%] md:w-2/5 flex flex-col gap-y-6">
-                <h1 className="text-2xl font-bold mb-8">Log-in to Dribbble</h1>
+                <h1 className="text-2xl font-bold mb-8">Log-in to Veer-Pawas</h1>
 
                 <div onClick={()=>signIn('google')} className="cursor-pointer border border-slate-400 flex justify-center items-center gap-x-4 py-4 px-4 rounded-full w-[95%] mx-auto">
                     <FcGoogle className="text-2xl" />

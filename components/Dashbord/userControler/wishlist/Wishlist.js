@@ -5,6 +5,8 @@ import { findUserWishlist } from "@/serverAction/user";
 import { removeWishlist } from "@/serverAction/wishlist";
 import { toast } from "sonner";
 import { memo } from "react";
+import Lottie from "lottie-react";
+import norecord from "@/components/lottieJSON/norecord"
 
 function Wishlist({session}) {
     const [data, setdata] = useState([]);
@@ -42,7 +44,7 @@ function Wishlist({session}) {
         <div className="w-full h-full overflow-auto py-4 flex flex-col gap-y-4">
 
             {
-               data.length ? data.map((ele, idx) => <Wishlistcard key={idx} data={ele} remove={remove} />) : <div><h2 className="ps-4 font-medium text-lg">No record found</h2></div>
+               data.length ? data.map((ele, idx) => <Wishlistcard key={idx} data={ele} remove={remove} />) : <Lottie className="w-full h-full" animationData={norecord}/>
             }
 
         </div>

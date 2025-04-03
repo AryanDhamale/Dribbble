@@ -39,7 +39,7 @@ function Conformation({ data, listing }) {
     const payment = async (cost) => {
         try {
             let { user } = await findUser(session.user.id);
-            if(user.email!=='aryandhamale07@gmail.com' || (!user.email_verified || !user.mobile_verified)){
+            if(!user.email_verified || !user.mobile_verified){
                 toast("Please verify yourself first !");
                 return; 
             }
@@ -125,9 +125,9 @@ function Conformation({ data, listing }) {
                             <p className="text-base font-medium"><span className="text-green-400">&#8377; {(listing.cost).toLocaleString('en-IN')}</span> * {data.totalPerson}  </p>
                             <p className="text-lg font-medium text-red-400">Once you Book, we&apos;ll handle the rest</p>
                             <ul className="text-sm font-medium flex flex-col gap-y-2">
-                                <li className="flex items-center gap-x-1.5"><LuCircleDotDashed className="text-green-400" /> After your payment is compelete , Dribbble advisor will get in touch with you to complete your booking.</li>
-                                <li className="flex items-center gap-x-1.5"><LuCircleDotDashed className="text-green-400" />Complete detials of all travellers including a copy of the valid ID proofs.</li>
-                                <li className="flex items-center gap-x-1.5"><LuCircleDotDashed className="text-green-400" />Post booking confirmation, we are constantly in touch with you through,SMS, WhatsApp and email keeping you updated about every step until your departure</li>
+                                <li className="flex items-center gap-x-1.5"><span className="size-4 flex items-center justify-center"><LuCircleDotDashed className="text-green-400 text-3xl"/></span> After your payment is compelete , Veer-Pawas advisor will get in touch with you to complete your booking.</li>
+                                <li className="flex items-center gap-x-1.5"><span className="size-4 flex items-center justify-center"><LuCircleDotDashed className="text-green-400 text-3xl"/></span>Complete detials of all travellers including a copy of the valid ID proofs.</li>
+                                <li className="flex items-center gap-x-1.5"><span className="size-4 flex items-center justify-center"><LuCircleDotDashed className="text-green-400 text-3xl"/></span>Post booking confirmation, we are constantly in touch with you through,SMS, WhatsApp and email keeping you updated about every step until your departure</li>
                             </ul>
                         </div>
 

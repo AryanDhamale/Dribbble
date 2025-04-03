@@ -63,7 +63,7 @@ function Listinghead({ data }) {
                     {/* Reviews con  */}
                     <div className="text-red-500 border h-50 border-slate-300 rounded-md drop-shadow-lg flex flex-col gap-y-4 items-center justify-center">
                        <span>NO REVIEW YET</span>
-                       <span>Book now, so will the first reviewer</span>
+                       <span>Book now, so you will be the first reviewer</span>
                     </div>
 
                 </div>

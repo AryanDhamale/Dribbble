@@ -13,6 +13,8 @@ function Dashbord() {
     const searchParams = useSearchParams();
     const {data:session}=useSession();
     const section = searchParams.get('section');
+    const message=searchParams.get('message');
+    const oid=searchParams.get('oid');
 
 
     const handleCase = () => {
@@ -21,7 +23,7 @@ function Dashbord() {
                 return <Account session={session} />;
 
             case "booking":
-                return <Booking session={session} />;
+                return <Booking session={session} message={message} oid={oid}/>;
 
             case "wishlist":
                 return <Wishlist session={session} />;

@@ -7,7 +7,7 @@ function PopularCard({data})
 {
     return (
         <Link href={`/package/${data._id}`}>
-        <div className="cursor-pointer mx-auto md:mx-0 drop-shadow-lg border border-gray-200 w-2xs rounded-md">
+        <div className="cursor-pointer mx-auto md:mx-0 drop-shadow-lg bg-white border border-gray-200 w-2xs rounded-md">
             <div className="h-52 object-cover p-1">
                 <Image unoptimized width={100} height={100} className="w-full h-full rounded-md" src={data.image} alt="this is an image" />
             </div>
@@ -15,8 +15,9 @@ function PopularCard({data})
                 <p className="text-xs font-basic opacity-50">{data.location}</p>
                 <p className="text-base font-medium w-[16rem] truncate text-[#872BFF]">{data.title}</p>
                 <div className="flex justify-start items-center">
-                 <IoIosStar className="text-orange-500"/>
-                 <span className="ps-0.5"> {data.cities.length}({data.totalDay} review)</span>
+                 {/* <IoIosStar className="text-orange-500"/> */}
+                 {/* <span className="ps-0.5"> {data.cities.length}({data.totalDay} review)</span> */}
+                 <span className={`px-3 py-0.5 text-xs font-medium rounded-sm text-black ${data.totalPerson > 4 ? "bg-green-400" : "bg-red-400"} `}>{data.totalPerson} Left</span>
                 </div>
                 {/* <div className="border border-slate-200"></div> */}
                 <hr />

@@ -19,7 +19,7 @@ function Signup()
     return ( 
           <div className="w-[69%] drop-shadow-lg flex justify-center items-center">
             <div className="w-2/5 flex flex-col gap-y-6">
-                <h1 className="text-2xl font-bold mb-8">Register to Dribbble</h1>
+                <h1 className="text-2xl font-bold mb-8">Register to Veer-Pawas</h1>
 
                 <div>
                     application form here //

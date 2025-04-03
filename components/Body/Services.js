@@ -14,7 +14,7 @@ function Services() {
     
             <div className="flex justify-center items-center flex-wrap gap-x-10 gap-y-8">
                 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] cursor-pointer transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] cursor-pointer transition-all ease-in-out duration-200 active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <FaBuilding className="text-2xl text-[#872bff]"/>
                   </div>
@@ -25,7 +25,7 @@ function Services() {
               </div>
 
 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <MdDinnerDining className="text-2xl text-[#872bff]"/>
                   </div>
@@ -36,7 +36,7 @@ function Services() {
               </div>
 
 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200  active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <FaCaravan className="text-2xl text-[#872bff]"/>
                   </div>
@@ -47,7 +47,7 @@ function Services() {
               </div>
 
 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <FaFlag className="text-2xl text-[#872bff]"/>
                   </div>
@@ -58,7 +58,7 @@ function Services() {
               </div>
 
 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <BsExclude className="text-2xl text-[#872bff]"/>
                   </div>
@@ -69,7 +69,7 @@ function Services() {
               </div>
 
 
-              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 hover:drop-shadow-[0_3px_10px_#f411cf]">
+              <div className="rounded-md drop-shadow-md bg-white w-60 flex flex-col justify-center items-center gap-y-4 px-4 h-[18rem] transition-all ease-in-out duration-200 active:drop-shadow-[0_3px_10px_#f411cf] hover:drop-shadow-[0_3px_10px_#f411cf]">
                   <div className="rounded-full size-14 flex items-center justify-center bg-slate-100">
                   <IoAirplane className="text-2xl text-[#872bff]"/>
                   </div>

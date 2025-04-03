@@ -27,7 +27,7 @@ export async function POST(request)
         if(xx){
             b.paymentStatus="completed";
             await b.save();
-            return NextResponse.redirect(process.env.NODE_ENV==='development' ? 'http://localhost:3000/dashboard?section=booking' : process.env.NEXT_PUBLIC_PREFIX+ 'dashboard?section=booking')
+            return NextResponse.redirect(process.env.NODE_ENV==='development' ? `http://localhost:3000/dashboard?section=booking&&message=success&&oid=${b.oid}` : process.env.NEXT_PUBLIC_PREFIX+ `dashboard?section=booking&&message=success&&oid=${b.oid}`)
         }else {
            return NextResponse.json({success:false,msg:'something went wrong!'});
         }

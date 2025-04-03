@@ -1,10 +1,12 @@
-
+"use client";
+import Lottie from "lottie-react";
+import notfound from "@/components/lottieJSON/notfound";
 
 function Message({msg})
 {
     return (
         <div className="w-full h-screen flex justify-center items-center">
-            <h2 className="text-xl">{msg}</h2>
+            <Lottie className="w-full h-[90vh]" animationData={notfound}/>
         </div>
     );
 }

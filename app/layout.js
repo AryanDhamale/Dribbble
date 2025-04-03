@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Dribbble",
-  description: "This is an Dribbble 747MAX",
+  title: "Veer-Pawas",
+  description: "This is an Veer-Pawas 747MAX",
 };
 
 

@@ -32,7 +32,7 @@ function Sidenav() {
         <div className="bg-white w-[100%] left-0 top-0 h-screen fixed z-[10]">
 
            <div className="w-full h-20 flex items-center justify-between px-6">
-            <p className="text-[#00ddb3] font-medium italic drop-shadow-lg text-2xl">Dribbble</p>
+            <p className="text-[#00ddb3] font-medium italic drop-shadow-lg text-2xl">Veer-Pawas</p>
             <GiCrossMark onClick={()=>dispatch(setVisible())} className="text-2xl text-red-500"/>
            </div>
 

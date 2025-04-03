@@ -5,6 +5,9 @@ import { useState,useEffect } from "react";
 import { notFound } from "next/navigation";
 import PackageCard from "@/components/showAllListings/PackageCard";
 import { getlistingbyCondition } from "@/serverAction/action";
+import Lottie from "lottie-react";
+import notfound from "@/components/lottieJSON/notFound";
+
 
 function City({params})
 {
@@ -39,7 +42,7 @@ function City({params})
        <Filter/>
        <div className="w-[90%] min-h-[100vh] mx-auto px-6 py-6 flex justify-start items-center flex-wrap gap-y-6 gap-x-12">
         {
-          cities.length ? cities.map((ele,idx)=><PackageCard key={idx} data={ele}/>) : <div className="w-full h-full flex justify-center items-center text-2xl">Not Found</div>
+          cities.length ? cities.map((ele,idx)=><PackageCard key={idx} data={ele}/>) : <Lottie className="w-full h-[90vh]" animationData={notfound}/>
         }
         </div>
     </div>

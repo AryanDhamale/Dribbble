@@ -8,7 +8,7 @@ function Footer()
     return (
             <div className="bg-[#121212] text-white h-[20rem] pt-15 flex flex-col gap-y-10">
                 <div className="flex flex-col gap-y-6">
-                  <h2 className="text-3xl font-medium text-center">Dribbble</h2>
+                  <h2 className="text-3xl font-medium text-center">Veer-Pawas</h2>
                   <ul className="flex justify-center gap-x-6">
                     <Link href={'/'}><li className="text-lg opacity-50 cursor-pointer hover:opacity-100">Home</li></Link>
                     <Link href={'/about'}><li className="text-lg opacity-50 cursor-pointer hover:opacity-100">About</li></Link>

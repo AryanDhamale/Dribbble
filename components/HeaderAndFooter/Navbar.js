@@ -22,7 +22,7 @@ function Navbar() {
        <div className="flex justify-center items-center gap-x-4">
       <Link href={'/'}>
       {/* text-[#872BFF] */}
-       <p className="text-2xl text-[#00ddb3] drop-shadow-lg font-semibold pr-2  italic cursor-pointer">Dribbble</p></Link>
+       <p className="text-2xl text-[#00ddb3] drop-shadow-lg font-semibold pr-2  italic cursor-pointer">Veer-Pawas</p></Link>
         <ul className="flex space-x-7 font-light text-lg max-[1180px]:hidden">
           <Link href={'/'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Home</li></Link>
           <Link href={'/show-all'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Tour</li></Link>

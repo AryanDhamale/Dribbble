@@ -66,7 +66,7 @@ function Bookingcon({ data }) {
 
     const append = useCallback((date) => {
         let newDate = new Date(date);
-        return newDate.setDate(newDate.getDate() + data.totalDay);
+        return newDate.setDate(newDate.getDate() + data.totalDay-1);
     }, [date])
 
     const totalCost = useCallback(() => {

@@ -8,7 +8,7 @@ function ContactUs() {
             <div className="w-full h-full flex flex-wrap items-center justify-evenly">
                <div className="flex flex-col gap-y-8">
                   <h2 className="font-bold text-xl md:text-6xl drop-shadow-lg">How can we help <br /> you today?</h2>
-                  <span className="drop-shadow-lg text-lg">Welcom to <span className="italic font-medium">Dribbble</span> help center</span>
+                  <span className="drop-shadow-lg text-lg">Welcom to <span className="italic font-medium">Veer-Pawas</span> help center</span>
                </div>
                <div>
                   <Image src={'/forAbout/cartoon.jpg'} width={100} height={100} className="size-80 px-4 py-4 rounded-[34px]" alt="this is image" />

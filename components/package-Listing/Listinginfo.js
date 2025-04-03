@@ -29,8 +29,8 @@ function Listinginfo({data}) {
                     <div className="flex flex-col gap-y-4" id="information">
                         <h2 className="text-lg font-medium mt-4">Tour information</h2>
                         <div className="font-medium px-2 py-2 grid grid-cols-2 gap-x-3 w-full sm:w-[50%]">
-                            <button onClick={() => setclusion("inclusion")} className={clusion == "inclusion" ? commonBtn + "text-white bg-[#24b985]" : commonBtn}>Our inclusion</button>
-                            <button onClick={() => setclusion("exclusion")} className={clusion == "exclusion" ? commonBtn + "text-white bg-[#24b985]" : commonBtn}>Our Exclusion</button>
+                            <button onClick={() => setclusion("inclusion")} className={clusion == "inclusion" ? commonBtn + "text-white bg-green-400" : commonBtn}>Our inclusion</button>
+                            <button onClick={() => setclusion("exclusion")} className={clusion == "exclusion" ? commonBtn + "text-white bg-red-400" : commonBtn}>Our Exclusion</button>
                         </div>
                         <div>
                             {clusion === "inclusion" && <Inclusion />}

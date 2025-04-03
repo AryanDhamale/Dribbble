@@ -24,7 +24,7 @@ function LikeandShare({id}) {
     const handleOnclick = () => {
         if(like)
         {
-            toast("you can package only once, for remove check dashboard");
+            toast("you can add package only once, for remove check dashboard");
             return;
         }
         if(session)

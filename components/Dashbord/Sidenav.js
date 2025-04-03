@@ -1,5 +1,5 @@
 "use client";
-import { PiDribbbleLogoFill } from "react-icons/pi";
+// import { PiVeer-PawasLogoFill } from "react-icons/pi";
 import { PiSignOutFill } from "react-icons/pi";
 import { CiBookmarkMinus } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
@@ -36,8 +36,8 @@ function Sidenav({ session }) {
     <div className="h-full w-full flex flex-col gap-y-4 relative">
 
       <div className="text-[#f411cf] w-full h-25 flex items-center justify-center gap-x-3">
-        <PiDribbbleLogoFill className="text-3xl" />
-        <Link href={'/'}><span className="italic font-medium text-lg">Dribbble</span></Link>
+        {/* <PiVeer-PawasLogoFill className="text-3xl" /> */}
+        <Link href={'/'}><span className="italic font-medium text-lg">Veer-Pawas</span></Link>
       </div>
 
       <div className="w-full flex flex-col items-center gap-y-3">
