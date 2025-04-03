@@ -11,7 +11,7 @@ function ContactUs() {
                   <span className="drop-shadow-lg text-lg">Welcom to <span className="italic font-medium">Veer-Pawas</span> help center</span>
                </div>
                <div>
-                  <Image src={'/forAbout/cartoon.jpg'} width={100} height={100} className="size-80 px-4 py-4 rounded-[34px]" alt="this is image" />
+                  <Image src={'/forAbout/cartoon.jpg'} width={100} height={100} className="drop-shadow-lg size-70 px-4 py-4 rounded-[35px]" alt="this is image" />
                </div>
             </div>
 

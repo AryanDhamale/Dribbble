@@ -84,8 +84,8 @@ function Sidenav() {
                 </ul>
             </div>
 
-            <div className="inline absolute bottom-6 left-1/2 -transform -translate-1/2">
-                <h2 className="text-base"><span className="opacity-50">This website was designed by</span> <span className="font-medium">Tejas Dhamale.</span> </h2>
+            <div className="w-full  absolute bottom-6 ">
+                <h2 className="text-base text-center"><span className="opacity-50">This website was designed by</span> <span className="font-medium">Tejas Dhamale.</span> </h2>
             </div>
         </div>
     );

@@ -27,9 +27,9 @@ function Gallary() {
                 </div>
             </div>
 
-            {visible && <div className="w-full h-full fixed top-0 bottom-0 left-0 right-0 bg-[#000000eb] z-[3]">
+            {visible && <div className="w-full h-full fixed top-0 bottom-0 left-0 right-0 bg-[#000000eb] z-[11]">
                 <div className="w-full h-full flex justify-center items-center relative">
-                    <RxCrossCircled onClick={()=>setVisible(false)} className="cursor-pointer text-white z-[4] text-4xl absolute top-[8%] right-[3rem]"/>
+                    <RxCrossCircled onClick={()=>setVisible(false)} className="cursor-pointer text-white z-[4] text-xl md:text-4xl absolute top-[8%] right-[1.2rem] md:right-[3rem]"/>
                     <Image width={100} height={100} unoptimized className="w-[95%] md:w-1/2 rounded-sm" src={current} alt="this is an image" />
                 </div>
             </div>}
