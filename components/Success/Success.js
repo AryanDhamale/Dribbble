@@ -1,7 +1,7 @@
 "use client";
 import Lottie from "lottie-react";
-import success from "@/components/lottieJSON/success"
-import sign from "@/components/lottieJSON/sign"
+import success from "@/components/lottieJSON/success.json"
+import sign from "@/components/lottieJSON/sign.json"
 import { Button } from "@/components/ui/button"
 
 function Success({control,oid})

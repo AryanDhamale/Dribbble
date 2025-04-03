@@ -6,7 +6,7 @@ import { removeWishlist } from "@/serverAction/wishlist";
 import { toast } from "sonner";
 import { memo } from "react";
 import Lottie from "lottie-react";
-import norecord from "@/components/lottieJSON/norecord"
+import norecord from "@/components/lottieJSON/norecord.json"
 
 function Wishlist({session}) {
     const [data, setdata] = useState([]);

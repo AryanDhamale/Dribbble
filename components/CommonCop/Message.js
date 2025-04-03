@@ -1,6 +1,6 @@
 "use client";
 import Lottie from "lottie-react";
-import notfound from "@/components/lottieJSON/notfound";
+import notfound from "@/components/lottieJSON/notfound.json";
 
 function Message({msg})
 {

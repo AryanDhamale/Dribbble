@@ -4,7 +4,7 @@ import { findAllbooking } from "@/serverAction/user";
 import Bookingcard from "./Bookingcard";
 import { memo } from "react";
 import Lottie from "lottie-react";
-import norecord from "@/components/lottieJSON/norecord";
+import norecord from "@/components/lottieJSON/norecord.json";
 import Success from "@/components/Success/Success";
 
 
