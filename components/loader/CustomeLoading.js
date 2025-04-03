@@ -5,8 +5,8 @@ import loading from "@/components/lottieJSON/loading.json"
 const Loading = () => {
   return (
     <div className="w-full h-[100vh] flex justify-center items-center">
-        <Lottie className="size-[10rem]" animationData={loading}/>
-        {/* ....Loading */}
+        {/* <Lottie className="size-[10rem]" animationData={loading}/> */}
+        ....Loading
     </div>
   );
 };
