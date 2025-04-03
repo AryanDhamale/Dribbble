@@ -3,8 +3,7 @@ import Conformation from "@/components/Booking/Conformation";
 import { useSearchParams } from "next/navigation";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-const Loading = dynamic(() => import("@/components/loader/loading"), { ssr: false });
+import Loading from "@/components/loader/loading";
 import { getoneListing } from "@/serverAction/action";
 import Message from "@/components/CommonCop/Message";
 

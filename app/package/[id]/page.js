@@ -4,8 +4,7 @@ import Listinginfo from "@/components/package-Listing/Listinginfo";
 import { getoneListing } from "@/serverAction/action";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
-const Loading = dynamic(() => import("@/components/loader/loading"), { ssr: false });
+import Loading from "@/components/loader/loading";
 import Bookingcon from "@/components/Booking/Bookingcon";
 
 function Package({ params }) {
