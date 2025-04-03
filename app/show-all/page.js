@@ -3,6 +3,7 @@ import Filter from "@/components/showAllListings/Filter";
 import PackageCard from "@/components/showAllListings/PackageCard";
 import { getallListing } from "@/serverAction/action";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 const Loading = dynamic(() => import("@/components/loader/loading"), { ssr: false });
 
 
