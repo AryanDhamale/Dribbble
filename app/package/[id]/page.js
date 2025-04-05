@@ -15,14 +15,14 @@ function Package({ params }) {
         async function fetchData() {
           try {
             const {id}=await params;
-            if(!id || id.length<24) {
-               return notFound();
-            }
+            // if(!id || id.length<24) {
+            //   return notFound();
+            // }
             let list = await getoneListing(id);
-            if(!list) {
-                return notFound();
+            if(!list.success) {
+              return notFound();
             }
-            setListing(list);
+            setListing(list.Package);
           } catch (err) {
             console.log("Error", err);
             return;

@@ -4,6 +4,7 @@ import { AiOutlineSlack } from "react-icons/ai";
 import LikeandShare from "../CommonCop/LikeandShare";
 import Button from "../CommonCop/Button";
 import { toast } from "sonner";
+import { FcNightLandscape } from "react-icons/fc";
 
 
 function Listinghead({ data }) {
@@ -22,8 +23,10 @@ function Listinghead({ data }) {
                                 data.cities.map((ele, idx) => <span key={idx}>{ele} --- </span>)
                             }
                         </p>
-                        <div className="mt-2">
-                            <span className={`${data.totalPerson>2 ? 'bg-green-400' : 'bg-red-400'} rounded-full text-white font-normal px-3 py-2`}>Only {data.totalPerson} left hurry up</span>
+                        <div className="mt-2 py-1 flex items-center bg-white drop-shadow-[0_1px_5px_#00ddb3] gap-x-2 justify-center w-[10rem] rounded-md">
+                            {/* <span className={`${data.totalPerson>2 ? 'bg-green-400' : 'bg-red-400'} rounded-full text-white font-normal px-3 py-2`}>Only {data.totalPerson} left hurry up</span> */}
+                            <FcNightLandscape className="text-3xl"/> 
+                            <span className="font-semibold text-sm">Only 4 Left</span>
                         </div>
                     </div>
 

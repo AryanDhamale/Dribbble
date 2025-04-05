@@ -38,12 +38,12 @@ function Dashbord() {
     return (
 
         <div className="min-h-[100vh] flex">
-            <div className="hidden md:block border-r border-slate-200 flex-1 bg-[ghostwhite]">
+            <div className="hidden md:block border-r border-slate-200 flex-1 bg-[#f5fbff]">
                 <Sidenav session={session} />
             </div>
             <div className="w-full md:w-[80%] py-5 flex flex-col gap-y-4">
-                <div className="w-[96%] rounded-md bg-[ghostwhite] border border-slate-200 mx-auto h-35 flex items-center ps-10"> <span className="text-3xl font-medium drop-shadow-lg">{section[0].toUpperCase() + section.slice(1)}</span> </div>
-                <div className="w-[96%] h-[74vh] rounded-md bg-[ghostwhite] border border-slate-200 mx-auto"> {handleCase()} </div>
+                <div className="w-[96%] rounded-md bg-[#f5fbff] border border-slate-200 mx-auto h-35 flex items-center ps-10"> <span className="text-3xl font-medium drop-shadow-lg">{section[0].toUpperCase() + section.slice(1)}</span> </div>
+                <div className="w-[96%] h-[74vh] rounded-md bg-[#f5fbff] border border-slate-200 mx-auto"> {handleCase()} </div>
             </div>
         </div>
 

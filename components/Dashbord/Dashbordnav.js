@@ -13,8 +13,8 @@ function Dashboardnav(){
     return (
         <>
         {visible && <Sidenav/>}
-        <div className="w-full px-4 h-20 border-b border-[#00ddb3] flex md:hidden items-center justify-between">
-            <Link href={'/'}><p className="text-2xl text-[#00ddb3] drop-shadow-lg font-semibold pr-2  italic cursor-pointer">Veer-Pawas</p></Link>
+        <div className="w-full px-4 h-20 bg-[#f5fbff] border-b border-[#00ddb3] flex md:hidden items-center justify-between">
+            <Link href={'/'}><p className="text-2xl drop-shadow-lg text-[#00ddb3] font-semibold pr-2  italic cursor-pointer">Veer-Pawas</p></Link>
             <FaBars onClick={()=>dispatch(setVisible())} className="text-black text-lg"/>
         </div>
         </>

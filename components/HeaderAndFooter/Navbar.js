@@ -17,7 +17,7 @@ function Navbar() {
 
 
   return (
-    <nav className="absolute z-[10] top-0 flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
+    <nav className="absolute z-[10] top-0 bg-[#f5fbff] flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
        {visibleNav && <Sidenav/>}
        <div className="flex justify-center items-center gap-x-4">
       <Link href={'/'}>

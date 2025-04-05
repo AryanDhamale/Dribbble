@@ -30,7 +30,8 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
+import { Label } from "@/components/ui/label";
 
 // local dependencys // 
 import { BsArrowRight } from "react-icons/bs";
@@ -180,8 +181,11 @@ function Bookingcon({ data }) {
                     </div>
 
                     <div className="flex items-center gap-x-3">
-                        <Input type="number" value={totalPerson} onChange={(e) => setTotalperson(e.target.value)} className={'w-[40%]'} placeholder="total peroson" />
-                        <Button type="submit" onClick={checkAvailable}>Check</Button>
+                        <div className="w-[50%] grid max-w-sm items-center gap-y-1.5">
+                        <Label htmlFor="count">total no. of person</Label>
+                        <Input id="count" type="number" value={totalPerson} onChange={(e) => setTotalperson(e.target.value)} className={'w-full'} placeholder="total peroson" />
+                        </div>
+                        <Button className={'mt-5.5'} type="submit" onClick={checkAvailable}>Check</Button>
                     </div>
 
                     <div className="my-6">

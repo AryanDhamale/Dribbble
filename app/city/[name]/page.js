@@ -25,7 +25,8 @@ function City({params})
       }
       setcity(name);
       const all = await getlistingbyCondition({location:name});
-      setcities(all);
+      if(all.success)
+      setcities(all.Package);
     }
     setloader(false);
     fetchData();

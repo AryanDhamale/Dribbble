@@ -5,8 +5,8 @@ async function CityWrapper()
 {
     try{
       const responce=await getallCities();
-      if(responce){
-       return <City responce={responce}/>
+      if(responce.success){
+       return <City responce={responce.arr}/>
       }else {
         console.log("not found!");
       }

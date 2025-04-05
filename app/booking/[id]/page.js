@@ -23,11 +23,11 @@ function Booking({ params }) {
           return notFound();
         }
         let res = await getoneListing(id);
-        if (!res || (res && totalPerson && res.totalPerson < totalPerson) ) {
+        if (res.success || (res.success && totalPerson && res.Package.totalPerson < totalPerson) ) {
           return <Message msg={"Invalid data has passed!"} />
         }
         
-        setListing(res);
+        setListing(res.Package);
         setData({ id, beforeDate, afterDate, totalPerson });
 
       } catch (err) {

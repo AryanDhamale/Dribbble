@@ -11,51 +11,55 @@ function filterOutAll(arr) {
 // LISTING FUNCTIONS // 
 
 export const getallListing = async (n) => {
-    await connetDb();
-    let arroflist;
-    if (n) {
-        arroflist = filterOutAll(await Listing.find().lean().limit(n));
+    try {
+     const db=await connetDb();
+     let arr = n>0 ? await Listing.find({}).lean().limit(n) : await Listing.find({}).lean();
+     return {success:true , arr : filterOutAll(arr)} ; 
+
+    }catch(err){
+      return {success:false,msg:"Error in fetching all lisitings"};
     }
-    else {
-        arroflist = filterOutAll(await Listing.find().lean());
-    }
-    return arroflist;
 }
 
 export const getoneListing = async (id) => {
-    await connetDb();
     try {
+        const db = await connetDb();
         const list = await Listing.findById(id);
-        return list.toObject({ flattenObjectIds: true });
+        return {success:true , Package:list.toObject({ flattenObjectIds: true })}
     } catch (err) {
-       //console.log({line:"34"});
-       return "";
+      return {success:false,err};
     }
 }
 
 export const getlistingbyCondition = async(condition)=>{
-  if(!condition) return [];
-  await connetDb();
-  return filterOutAll(await Listing.find(condition));
+  try {
+    if(!condition) return [];
+    await connetDb();
+    return {success:true , Package : filterOutAll(await Listing.find(condition))}
+  }catch(err){
+    return {success:false, err};
+  }
 }
 
 
 // CITIES FUNCTION // 
 
 export const getallCities=async(n)=>{
-  let cityarr;
-  await connetDb();
-  if(n)
-  {
-    cityarr=filterOutAll(await City.find().lean().limit(n));
-  }else {
-    cityarr=filterOutAll(await City.find().lean());
+  try {
+    const db=await connetDb();
+    let arr = n>0 ? await City.find().lean().limit(n) : await City.find().lean();
+    return {success:true, arr : filterOutAll(arr)};
+  }catch(err){
+    return {success:false,err};
   }
-  return cityarr;
 }
 
 export const getcitybyCondition= async(condition)=>{
-  if(!condition) return [];
+  try {
+    if(!condition) return [];
   await connetDb();
-  return filterOutAll(await City.find(condition));
+  return {success:true , City : filterOutAll(await City.find(condition))};
+  }catch(err){
+    return {success:false,err};
+  }
 }

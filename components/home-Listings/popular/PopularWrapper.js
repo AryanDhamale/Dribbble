@@ -5,8 +5,8 @@ async function PopularWrapper()
 {
     try {
       const responce = await getallListing(8);
-      if(responce) {
-        return <Popular responce={responce}/>
+      if(responce.success) {
+        return <Popular responce={responce.arr}/>
       }else {
         console.log("not found!");
       }
