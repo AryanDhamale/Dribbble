@@ -5,7 +5,7 @@ import Image from "next/image";
 function PackageCard({data})
 {
     return (
-        <div className="border border-slate-200 bg-white hover:drop-shadow-lg rounded-md h-[30rem] sm:h-[20rem] w-[25rem]  px-2 py-2 flex flex-col gap-y-2">
+        <div className="border border-slate-200 bg-white hover:drop-shadow-lg rounded-3xl h-[30rem] sm:h-[20rem] w-[25rem]  px-2 py-2 flex flex-col gap-y-2">
             <div className="flex flex-col sm:flex-row gap-x-3">
                 <div>
                     <Image width={100} height={100} className="w-full h-48 sm:size-30 object-cover rounded-md" src={data.image} alt="this is an image" />

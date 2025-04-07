@@ -1,6 +1,6 @@
 import PopularCard from "./PopularCard";
 import Link from "next/link";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 
 function Popular({responce}) {
     return (
@@ -10,7 +10,10 @@ function Popular({responce}) {
                     <h2 className="text-xl md:text-3xl font-normal text-[#f411cf] tracking-widest">Most Popular Tour</h2>
                 </div>
                 <div>
-                    <Link href={"/show-all"} className="text-base flex justify-center items-center gap-x-2 text-gray-700 hover:underline hover:underline-offset-4"> <span className="text-sm">View more</span> <FaLongArrowAltRight /></Link>
+                    {/* <Link href={"/show-all"} className="text-base flex justify-center items-center gap-x-2 text-gray-700 hover:underline hover:underline-offset-4"> <span className="text-sm">View more</span> <FaLongArrowAltRight /></Link> */}
+                    <Link href={'/show-all'}>
+                    <button className="bg-[#f9f4ff] text-[#872bff] cursor-pointer py-2 px-6 flex items-center gap-x-1 rounded-full"> <span className="font-medium">See All</span> <IoIosArrowForward className="text-base font-medium"/> </button>
+                    </Link>
                 </div>
             </div>
 

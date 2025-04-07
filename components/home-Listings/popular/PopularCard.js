@@ -8,9 +8,9 @@ function PopularCard({data})
 {
     return (
         <Link href={`/package/${data._id}`}>
-        <div className="cursor-pointer mx-auto md:mx-0 drop-shadow-lg bg-white border border-gray-200 w-2xs rounded-md">
-            <div className="h-52 object-cover p-1">
-                <Image unoptimized width={100} height={100} className="w-full h-full rounded-md" src={data.image} alt="this is an image" />
+        <div className="cursor-pointer mx-auto md:mx-0 drop-shadow-lg bg-white  w-2xs rounded-3xl">
+            <div className="h-52 object-cover">
+                <Image unoptimized width={100} height={100} className="w-full h-full rounded-t-3xl" src={data.image} alt="this is an image" />
             </div>
             <div className="px-3 py-3 flex flex-col gap-y-2">
                 <p className="text-xs font-basic opacity-50">{data.location}</p>

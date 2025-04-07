@@ -22,6 +22,7 @@ function City({responce}) {
                 <Carousel
                     opts={{
                         align: "start",
+                        loop:true
                     }}
                     className="relative"
                 >

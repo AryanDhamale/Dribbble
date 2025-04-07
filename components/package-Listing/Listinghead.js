@@ -13,7 +13,7 @@ function Listinghead({ data }) {
             <div className="mx-auto my-4 flex  flex-wrap w-full md:w-[90%]">
 
                 <div className="w-full md:w-[68%] flex flex-col px-6 gap-y-3 py-4">
-                    <Image width={100} height={100} unoptimized className="w-full h-auto rounded-md block md:h-[30rem]" src={data.image} alt="this is an image" />
+                    <Image width={100} height={100} unoptimized className="w-full h-auto rounded-xl block md:h-[30rem]" src={data.image} alt="this is an image" />
                     <h1 className="text-xl font-bold">{data.title}</h1>
                     <div className="font-medium text-sm flex flex-col gap-y-3">
                         <p>Total <span className="underline underline-offset-1 text-blue-900">7 Reviews</span> </p>

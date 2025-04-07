@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 function ReviewCard({data})
 {
     return (
-        <div className="h-[15rem] mx-auto border border-slate-200 hover:drop-shadow-lg bg-white text-black w-sm px-4 py-4 rounded-sm">
+        <div className="h-[15rem] my-4 mx-auto drop-shadow-lg bg-white text-black w-sm px-4 py-4 rounded-3xl">
            <div>
              <div className="flex gap-x-2"><span className="flex items-center gap-x-1"><FaStar className="text-yellow-500"/> {data.star}</span> <button className="border border-red-400 rounded-sm px-1.5 py-1 text-xs text-red-500">Family</button> </div>
              <p className="font-semibold pb-2 pt-2">{data.location}</p>
