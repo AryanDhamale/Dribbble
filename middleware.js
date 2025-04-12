@@ -9,11 +9,11 @@ export async function middleware(request)
   { 
     return NextResponse.next();
   }else{
-    return NextResponse.rewrite(new URL('/404',request.url));
+    return NextResponse.rewrite(new URL('/session',request.url));
   }
 }
 
 
 export const config={
-    matcher :  ['/dashbord']
+    matcher :  ['/dashboard','/dashboard/:path*']
 }

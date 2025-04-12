@@ -1,16 +1,19 @@
 "use client";
 // import { PiVeer-PawasLogoFill } from "react-icons/pi";
 import { PiSignOutFill } from "react-icons/pi";
-import { CiBookmarkMinus } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa6";
-import { RiAccountCircleFill } from "react-icons/ri";
-import { VscCodeReview } from "react-icons/vsc";
 import Image from "next/image";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { findUser } from "@/serverAction/user";
 import { memo } from "react";
+
+// luci-reacticons // 
+import { SquareUserRound } from 'lucide-react';
+import { Book } from 'lucide-react';
+import { CakeSlice } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+
 
 function Sidenav({ session }) {
   const [userdata, setuserdata] = useState({});
@@ -27,45 +30,32 @@ function Sidenav({ session }) {
     fetchData();
   }, [session]);
 
-  const links = [{ name: 'Account', logo: <RiAccountCircleFill className="text-[1.4rem] text-purple-500" />, link: 'account' },
-  { name: 'Booking', logo: <CiBookmarkMinus className="text-[1.4rem] text-green-400" />, link: 'booking' },
-  { name: 'Wishlist', logo: <FaHeart className="text-[1.4rem] text-red-500" />, link: 'wishlist' },
-  { name: 'Reviews', logo: <VscCodeReview className="text-[1.4rem] text-blue-500" />, link: 'review' }
-  ];
   return (
-    <div className="h-full w-full flex flex-col gap-y-4 relative">
+    <div className="h-full w-full flex flex-col gap-y-3 relative">
 
-      <div className="text-[#f411cf] w-full h-25 flex items-center justify-center gap-x-3">
+      <div className="text-black drop-shadow-lg w-full h-20 ps-6 flex items-center justify-start">
         {/* <PiVeer-PawasLogoFill className="text-3xl" /> */}
-        <Link href={'/'}><span className="italic font-medium text-lg">Veer-Pawas</span></Link>
+        <Link href={'/'}><span className="italic font-medium text-2xl">Veer-Pawas</span></Link>
       </div>
 
-      <div className="w-full flex flex-col items-center gap-y-3">
-        <div className="bg-slate-100 p-1 size-15 rounded-full drop-shadow-lg">
-          <Image className="w-full h-full rounded-full" width={100} height={100} src={ session ? session.user.image : "https://avatars.githubusercontent.com/u/124599?v=4"} alt="this is an image" />
-        </div>
 
-        <div>
-          <p className="font-medium text-lg">{session ? session.user.name : "Null"}</p>
-          <p className="font-normal text-sm opacity-30">{session ? session.user.email : "Null"}</p>
-          <p className="font-normal text-sm opacity-30">{'+91 ' + userdata.mobileNo || "not found!"}</p>
-        </div>
-      </div>
+      <div className="">
+        <span className="ps-6 text-xs font-medium opacity-50">Menu</span>
+        <ul className="my-3 flex flex-col gap-y-2">
+          <Link href={'/dashboard/?section=account'}><li className="hover:bg-[#e8ddf3] w-[96%] mx-auto rounded-md px-4 py-2 flex items-center gap-x-4 opacity-50 hover:opacity-100 cursor-pointer"> <SquareUserRound className="text-xs"/> <span className="text-sm font-medium">Account</span> </li></Link>
 
-      <div>
-        <ul className="py-3 flex flex-col gap-y-4 h-[25rem] overflow-y-auto">
-          {
-            links.map((ele, idx) =>
-              <Link key={idx} href={`/dashboard?section=${ele.link}`}>
-                <li className="hover:bg-[#ececff] w-[95%] mx-auto rounded-md ps-6 cursor-pointer py-3 flex items-center gap-x-4"> {ele.logo} <span className="text-base">{ele.name}</span></li>
-              </Link>
-            )
-          }
+          <Link href={'/dashboard/?section=booking'}><li className="hover:bg-[#e8ddf3] w-[96%] mx-auto rounded-md px-4 py-2 flex items-center gap-x-4 opacity-50 hover:opacity-100 cursor-pointer"> <Book className="text-[10px]"/> <span className="text-sm font-medium">Booking</span> </li></Link>
+
+          <Link href={'/dashboard/?section=wishlist'}><li className="hover:bg-[#e8ddf3] w-[96%] mx-auto rounded-md px-4 py-2 flex items-center gap-x-4 opacity-50 hover:opacity-100 cursor-pointer"> <CakeSlice className="text-[10px]"/> <span className="text-sm font-medium">wishlist</span> </li></Link>
+
+
+          <Link href={'/dashboard/?section=review'}><li className="hover:bg-[#e8ddf3] w-[96%] mx-auto rounded-md px-4 py-2 flex items-center gap-x-4 opacity-50 hover:opacity-100 cursor-pointer"> <MessageCircle className="text-xs"/> <span className="text-sm font-medium">Review</span> </li></Link>       
+          
         </ul>
       </div>
 
       <div className="absolute w-full bottom-0 h-20">
-        <div className="flex items-center justify-center gap-x-3">
+        <div className="flex items-center justify-start ps-6 gap-x-3">
           <PiSignOutFill className="text-[1.2rem]" />
           <span onClick={() => signOut()} className="font-medium text-base cursor-pointer">Log-out</span>
         </div>

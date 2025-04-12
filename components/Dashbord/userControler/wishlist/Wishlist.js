@@ -7,49 +7,48 @@ import { toast } from "sonner";
 import { memo } from "react";
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-import norecord from "@/components/lottieJSON/norecord.json"
+import norecord from "@/components/lottieJSON/norecord.json";
+import circleLoading from "@/components/lottieJSON/circleLoading.json";
 
-function Wishlist({session}) {
-    const [data, setdata] = useState([]);
+function Wishlist({ session }) {
+  const [data, setdata] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    async function fetchData()
-    {
-       if(session)
-       {
-         let res = await findUserWishlist(session.user.id);
-         if(res.success)
-         {
-           setdata(res.arr || []);
-         }
-       }
+  async function fetchData() {
+    setLoading(true);
+    let res = await findUserWishlist(session.user.id);
+    if (res.success) {
+      setdata(res.arr || []);
     }
+    setLoading(false);
+  }
 
-    const remove=async(id)=>{
-       console.log("called")
-       if(session){
-        let res = await removeWishlist(session.user.id,id);
-        if(res.success) {
-          toast("removed successfully!");
-          fetchData();
-        }else {
-            toast(res.message);
-        }
-       }
+  const remove = async (id) => {
+    if (session) {
+      let res = await removeWishlist(session.user.id, id);
+      if (res.success) {
+        toast("removed successfully!");
+        fetchData();
+      } else {
+        toast(res.message);
+      }
     }
+  }
 
-    useEffect(()=>{
-      fetchData();
-    },[session]);
+  useEffect(() => {
+    if (session) fetchData();
+  }, [session]);
 
-    return (
-        <div className="w-full h-full overflow-auto py-4 flex flex-col gap-y-4">
+  return (
+    <div className="w-full flex items-center justify-center flex-wrap gap-x-5 gap-y-5">
 
-            {
-               data.length ? data.map((ele, idx) => <Wishlistcard key={idx} data={ele} remove={remove} />) : <Lottie className="w-full h-full" animationData={norecord}/>
-            }
+      {
+        loading ? <div className="w-full h-screen flex justify-center items-center "> <Lottie className="size-35" animationData={circleLoading}/> </div> : 
+        (data.length ? data.map((ele, idx) => <Wishlistcard key={idx} data={ele} remove={remove} />) : <Lottie className="w-full h-screen" animationData={norecord} />)
+      }
 
-        </div>
-    );
+    </div>
+  );
 }
 
 export default memo(Wishlist);

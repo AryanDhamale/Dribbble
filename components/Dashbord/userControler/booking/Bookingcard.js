@@ -1,6 +1,30 @@
+// local dependancy //
 import Image from "next/image";
+import { memo } from "react";
+import { PiDotDuotone } from "react-icons/pi";
+import Link from "next/link";
+
+// shadcn dependancy // 
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button"
+
+
+
 
 function Bookingcard({ data }) {
+
+    const buttonColor={
+        ongoing : {text:'text-green-600',bg:'bg-[#eaf8f3]'},
+        missed: {text:'text-red-600',bg:'bg-red-50'},
+        complete : {text:'text-blue-600',bg:'bg-blue-50'}
+    }
 
     const before = () => {
         if (data.bookingDate) {
@@ -15,7 +39,7 @@ function Bookingcard({ data }) {
         currentDate.setHours(0, 0, 0, 0);
         let selectDate = new Date(data.bookingDate);
         selectDate.setHours(0, 0, 0, 0);
-        if(currentDate <= selectDate) {
+        if (currentDate <= selectDate) {
             return true;
         }
         else {
@@ -24,29 +48,37 @@ function Bookingcard({ data }) {
     }
 
     return (
-        <div className="border border-slate-200 bg-white drop-shadow-lg rounded-2xl px-2 py-2 w-[98%] mx-auto flex gap-x-0.5 sm:gap-x-4">
-
-            <Image className="my-auto sm:my-0 block size-15 sm:size-30 object-cover rounded-md" width={100} height={100} src={data.image} alt="this is an image" />
-            <div className="flex-1 flex justify-between px-4 items-center">
-                <div>
-                    <div className="flex flex-col gap-y-0.5 text-xs">
-                        <p className="font-medium">{data.location}</p>
-                        <p className="font-medium sm:text-base"><span className="opacity-50">Start-from </span>: <span className="font-bold text-green-400">&#8377; {(data.cost).toLocaleString('en-IN')} * {data.totalPerson}</span> </p>
-                        {/* <p className="font-light opacity-50 sm:text-sm">per person had applyed</p> */}
-                        <div>
-                            <p className="sm:text-base py-1"> <span>Starting - </span> {before()} </p>
+        <div className="">
+            <Card className={'w-[360px]'}>
+                <CardHeader>
+                    <CardTitle className={'flex gap-x-3 border-b border-slate-200 pb-2'}>
+                        <Image width={100} height={100} className="object-cover size-18 rounded-md border-2 border-slate-200" src={data.image} alt="this is an image" />
+                        <div className="flex flex-col gap-y-1 py-1.5">
+                            <h2 className="font-medium w-[15rem] truncate">{data.location}</h2>
+                            <p className="text-sm font-normal opacity-50">{before()}</p>
+                            <p className="text-sm font-normal opacity-50">totalPerson : {data.totalPerson}</p>
                         </div>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-x-2">
-                    <button className={`${compare() ? "bg-green-400" : "bg-red-400"}  text-white text-xs sm:text-base rounded-full px-3 py-1 sm:px-5 sm:py-2 flex gap-x-2 items-center`}>{compare() ? "Ongoing" : "Missed"}</button>
-                </div>
-
-            </div>
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <ul>
+                        <li className="flex items-center gap-x-1"> <PiDotDuotone className="text-lime-700 text-2xl" /> <span className="text-xs font-medium text-lime-500">oid : {data.oid || "not found!"} </span> </li>
+                        <li className="flex items-center gap-x-1"> <PiDotDuotone className="text-lime-700 text-2xl" /> <span className="text-xs font-medium opacity-50">Cost : </span> <span className="text-xs font-medium">&#8377; {(data.cost).toLocaleString("en-IN")}</span> </li>
+                        <li className="flex items-center gap-x-1"> <PiDotDuotone className="text-lime-700 text-2xl" /> <span className="text-xs font-medium">paymentStatus :</span> <span className={`text-xs font-medium ${data.paymentStatus=='completed' ? 'text-green-600' : 'text-red-600'}`}>{data.paymentStatus}</span> </li>
+                    </ul>
+                </CardContent>
+                <CardFooter>
+                  {data.paymentStatus=="completed" ?  <div className='w-full grid grid-cols-2 gap-x-2'>
+                  <Button variant="outline" className={'rounded-full cursor-pointer'}>Cancel Trip</Button>
+                  {
+                    data.tourStatus ? <Button variant="outline" className={`rounded-full cursor-pointer ${buttonColor[data.tourStatus].bg} hover:${buttonColor[data.tourStatus].bg} border-0`}> <span className={buttonColor[data.tourStatus].text}>{data.tourStatus}</span> </Button> : <Button>Don&apos;t know</Button>
+                  }
+                  </div> : <Link className="w-full" href={'/'}> <div className="w-full grid grid-col-1 "><Button className={'cursor-pointer rounded-full'} variant='outline'>Continue Booking</Button> </div> </Link> }
+                </CardFooter>
+            </Card>
 
         </div>
     );
 }
 
-export default Bookingcard;
+export default memo(Bookingcard);

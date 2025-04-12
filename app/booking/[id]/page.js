@@ -23,7 +23,7 @@ function Booking({ params }) {
           return notFound();
         }
         let res = await getoneListing(id);
-        if (res.success || (res.success && totalPerson && res.Package.totalPerson < totalPerson) ) {
+        if (!res.success || (totalPerson && res.Package.totalPerson < totalPerson) ) {
           return <Message msg={"Invalid data has passed!"} />
         }
         

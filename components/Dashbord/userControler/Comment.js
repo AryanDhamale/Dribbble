@@ -7,7 +7,7 @@ function Comment()
 {
     return (
         <div className="w-full h-full px-3 py-3">
-            <Lottie className="w-full h-full" animationData={norecord}/>
+            <Lottie className="w-full h-screen" animationData={norecord}/>
         </div>
     );
 }

@@ -6,11 +6,13 @@ import PopularWrapper from "@/components/home-Listings/popular/PopularWrapper";
 import CityWrapper from "@/components/home-Listings/city/CityWrapper";
 import { Suspense } from "react";
 import Loading from "@/components/loader/CustomeLoading.js";
+import Popup from "@/components/Popup/Popup";
 
 function App()
 {
   return (
-    <div>
+       <>
+       <Popup/>
        <Suspense fallback={<Loading />}>
        <Landing/>
        <PopularWrapper/>
@@ -19,7 +21,7 @@ function App()
        <Services/>
        <Count/>
        </Suspense>
-    </div>
+      </>
   );
 }
 

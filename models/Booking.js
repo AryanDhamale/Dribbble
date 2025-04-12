@@ -7,7 +7,9 @@ const bookingSchma=new Schema({
     cost : {type:Number,required:true},
     totalPerson : {type : Number,required : true} ,
     bookingDate : {type : Date , required : true} ,
-    paymentStatus : {type:String , enum:['pending','completed'],default : "pending"}
+    paymentStatus : {type:String , enum:['pending','completed'],default : "pending"},
+    returned : {type:Boolean , default:false},
+    tourStatus : {type:String,enum:['ongoing','missed','completed'],default:'ongoing'}
 },{timestamps:true});
 
 export default models.Booking || model('Booking',bookingSchma);

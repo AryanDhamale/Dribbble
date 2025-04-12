@@ -29,6 +29,8 @@ const userSchema=new Schema({
         type: String,
         enum : ['male','female','other']
     },
+    state : {type:String},
+    address: {type:String},
     wishlist : [{type:Schema.Types.ObjectId,ref:"Listing"}],
     booking : [{type:Schema.Types.ObjectId,ref:"Booking"}]
     

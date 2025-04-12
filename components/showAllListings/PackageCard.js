@@ -1,6 +1,8 @@
 import LikeandShare from "../CommonCop/LikeandShare";
-import Button from "../CommonCop/Button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 function PackageCard({data})
 {
@@ -23,7 +25,8 @@ function PackageCard({data})
                <div>
                <LikeandShare id={data._id}/>
                </div>
-               <Button text={"see more"} round="sm" link={`/package/${data._id}`} width={"80%"}/>
+               <Link href={`/package/${data._id}`} className="block w-[90%] mx-auto"><Button variant="outline" className='py-5 w-full cursor-pointer mt-3 rounded-full'>Check more</Button></Link> 
+               {/* <Button text={"see more"} round="sm" link={`/package/${data._id}`} width={"80%"}/> */}
             </div>
         </div>
     );

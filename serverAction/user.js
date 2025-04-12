@@ -68,13 +68,13 @@ export const findUser = async (id) => {
 
 export const upDateExitinguser=async(id,data)=>{
   try {
-    if(!id || !data) {
+    if(!id || !data.state) {
       throw new Error("id and data is required !");
     }
     let db = await connetDb();
     let res=await User.findByIdAndUpdate(id,{...data,mobile_verified:true},{new:true});
     return {success:true,msg:"account has updated!"};
   }catch(err){
-   return {success:false,err};
+   return {success:false,msg:err.message};
   }
 }

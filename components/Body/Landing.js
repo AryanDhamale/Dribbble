@@ -5,9 +5,10 @@ import Searchbox from "../search/Searchbox";
 import landing from '@/components/lottieJSON/landing.json'
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import { useSession } from "next-auth/react";
 
 function Landing() { 
-   
+   const {data:session}=useSession();
    return (
       <>
          <div className={`min-h-[100vh] bg-[#f5fbff] relative mt-20`}>
@@ -22,7 +23,7 @@ function Landing() {
                   <p className="text-lg font-medium sm:text-4xl drop-shadow-lg text-[#f411cf]">Bright your future with <span className="italic">Veer-Pawas</span> </p>
                   <p className="opacity-70">Stay updated wtih travel tips, recommendations, and latest promos</p>
                   <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-4">
-                     <Link href="#services">
+                     <Link onClick={()=>console.log(session)} href="#services">
                      <button className="drop-shadow-lg text-black transition delay-150 duration-100 ease-in-out border border-[#872bff] cursor-pointer hover:bg-[#872bffd3] hover:text-white hover:border-transparent px-8 py-2 font-medium rounded-full tracking-wide text-sm sm:text-base">SERVICES</button></Link>
                      <Link href={'/about'}>
                      <button className="drop-shadow-lg cursor-pointer text-white bg-[#872bff] px-8 py-2 font-medium rounded-full tracking-wide text-sm sm:text-base">ABOUT US</button></Link>

@@ -15,6 +15,9 @@ function Navbar() {
   const visibleNav=useSelector((state)=>state.sideNavcontrol.value)
   const dispatch=useDispatch();
 
+  const randomColor=()=>{
+    return `rgb(${Math.floor(Math.random()*256)}_${Math.floor(Math.random()*256)}_${Math.floor(Math.random()*256)})`
+  }
 
   return (
     <nav className="absolute z-[10] top-0 bg-[#f5fbff] flex justify-between px-4 sm:px-8 items-center h-[5rem] space-x-6  w-full  text-black"> 
@@ -26,7 +29,7 @@ function Navbar() {
         <ul className="flex space-x-7 font-light text-lg max-[1180px]:hidden">
           <Link href={'/'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Home</li></Link>
           <Link href={'/show-all'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Tour</li></Link>
-          <Link href={'/gallery'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Gallary</li></Link>
+          <Link href={'/gallery'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Gallery</li></Link>
           <Link href={'/contact-us'}><li className="cursor-pointer hover:underline hover:underline-offset-4">Contact</li></Link>
         </ul>
         <button className="hidden rounded-full transition delay-150 duration-100 ease-in-out cursor-pointer text-white bg-[#872bff] px-4 sm:px-8 py-2 font-light text-lg tracking-wide ml-4">Book Now</button>
@@ -34,8 +37,10 @@ function Navbar() {
 
       <div className= "hidden md:flex justify-center items-center">
       {session && <div className="relative drop-shadow-lg">
-      <Image onClick={()=>setdropvisible(!dropvisible)} width={100} height={100} className="size-12 rounded-full cursor-pointer" src={session.user.image || '/default_img.png'} alt="this is an image"></Image>
-      {dropvisible  && <Dropoptions control={setdropvisible}/>}
+
+      {session.user.image ? <Image onClick={()=>setdropvisible(!dropvisible)} width={100} height={100} className='size-12 rounded-full cursor-pointer' src={session.user.image} alt="this is an image"></Image> 
+        : <div onClick={()=>setdropvisible(!dropvisible)} className={`size-12 font-bold bg-blue-50 rounded-full cursor-pointer flex justify-center items-center text-xl`}>{session.user.name[0]}</div>}
+      {dropvisible  && <Dropoptions control={setdropvisible}/>} 
       </div>}
       {!session && <div className="flex justify-center items-center">
       <Link href={'/session/new'}>

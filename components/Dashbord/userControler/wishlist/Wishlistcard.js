@@ -1,35 +1,34 @@
+"use client"
 import Image from "next/image";
-import { AiTwotoneDelete } from "react-icons/ai";
-import { GoChevronRight } from "react-icons/go";
 import Link from "next/link";
+import { PiDotDuotone } from "react-icons/pi";
+import { MdDelete } from "react-icons/md";
+import { memo } from "react";
 
 
 function Wishlistcard({data,remove}) {
 
+    const handleDel=(e,id)=>{
+      e.preventDefault();
+      remove(id);
+    }
     return (
-        <div className="border border-slate-200 bg-white drop-shadow-lg rounded-2xl px-2 py-2 w-[98%] mx-auto flex gap-x-0.5 sm:gap-x-4">
-
-            <Image className="my-auto sm:my-0 size-15 sm:size-30 object-cover rounded-md" width={100} height={100} src={data.image} alt="this is an image" />
-            <div className="flex-1 flex justify-between px-4 items-center">
-                <div className="text-xs">
-                    <p className="font-medium">{data.title}</p>
-                    <div className="flex flex-col gap-y-0.5">
-                        <p className="font-medium  sm:text-base"><span className="opacity-50">Start-from </span>: <span className="font-bold">&#8377; {(data.cost).toLocaleString('en-IN')}</span> </p>
-                        <p className="font-light opacity-50  sm:text-sm">per person will apply</p>
-                        <p className="font-medium sm:text-sm">{data.totalDay}-Day {data.cities.length}-cities</p>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2">
-                    <Link href={`/package/${data._id}`}>
-                    <button className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full px-3 py-1 text-sm sm:text-base sm:px-5 sm:py-2 flex gap-x-2 items-center"><span>Check</span><GoChevronRight/></button></Link>
-                    <button onClick={()=>remove(data._id)} className="bg-[#bedbff] active:bg-[#bedbffd7] cursor-pointer rounded-full text-sm sm:text-base px-3 py-1 sm:px-5 sm:py-2 flex gap-x-2 items-center"><AiTwotoneDelete /> <span>Remove</span></button>
-                </div>
-
+        <Link href={`/package/${data._id}`}>
+        <div className="drop-shadow-lg bg-white  rounded-3xl w-[250px] h-[250px] relative">
+            <div className="size-full">
+                <Image width={100} height={100} unoptimized className='size-full rounded-3xl object-cover' src={data.image} alt="this is an image"/>
+                <div onClick={(e)=>handleDel(e,data._id)} className="size-[30px] hover:bg-red-100 bg-white flex justify-center items-center rounded-full absolute top-5 right-4 cursor-pointer"> <MdDelete className="text-red-500 "/> </div>
             </div>
-
+            <div className="bg-[#eff4fb85] absolute bottom-0 left-0 w-full px-2 rounded-b-3xl">
+              <h2 className="font-medium text-sm w-[240px] truncate">{data.title}</h2>
+              <ul className="">
+              <li className="flex items-center"> <PiDotDuotone className="text-3xl" /> <span className="text-xs font-medium">Cost : </span> <span className="text-xs font-medium">&#8377; {(data.cost).toLocaleString("en-IN")}</span> </li>
+              <li className="flex items-center"> <PiDotDuotone className="text-3xl" /> <span className="text-xs font-medium">Avialable sit : </span> <span className="text-xs font-medium"> {data.totalPerson}</span> </li>
+              </ul>
+            </div>
         </div>
+        </Link>
     );
 }
 
-export default Wishlistcard;
+export default memo(Wishlistcard);

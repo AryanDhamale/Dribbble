@@ -8,7 +8,7 @@ function Dropoptions({control})
     return (
         <div className="bg-white text-slate-900 absolute w-60 right-8 mt-2 px-6 py-6 rounded-lg drop-shadow-lg">
            <div className="flex flex-col items-center gap-y-1">
-             <Image width={100} height={100} className="size-10 rounded-full" src={session.user.image || '/default_img.png'} alt="this is an image"></Image>
+             {session.user.image ? <Image width={100} height={100} className="size-10 rounded-full" src={session.user.image || '/default_img.png'} alt="this is an image"></Image> : <div className={`size-10 font-semibold bg-blue-50 rounded-full cursor-pointer flex justify-center items-center text-xl`}>{session.user.name[0]}</div>}
              <p>{session.user.name}</p>
            </div>
            <div>

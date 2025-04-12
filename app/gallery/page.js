@@ -13,15 +13,16 @@ function Gallary() {
         setVisible(()=>true);
     }
     return (
-        <div className="mt-20 min-h-[100vh] flex flex-col gap-y-3">
-            <div className="h-35 bg-[ghostwhite] flex items-center">
-                <h2 className="text-3xl font-medium px-10 drop-shadow-lg">Image Gallery</h2>
+        <div className="mt-25 min-h-[100vh] flex flex-col gap-y-3">
+            <div className="h-35 flex flex-col gap-y-3 items-center justify-center">
+                <h2 className="text-3xl font-bold">Our Gallery</h2>
+                <span className="opacity-50 text-lg">Explore the stunning all-exclusive image gallery of Veer-Pawas, featuring rare, high-quality visuals that capture its essence in breathtaking detail.</span>
             </div>
             <div>
                 <div className="w-full md:w-[95%] mx-auto gap-x-6 gap-y-8 flex-1 px-4 py-4 flex justify-start items-center flex-wrap">
                     {
                         arr.map((ele, idx) =>
-                            <Image onClick={handleOnclick} width={100} height={100} key={idx} className="size-[20rem] rounded-md hover:scale-[1.05] cursor-pointer hover:drop-shadow-lg object-cover transition-all ease-linear" id={`${idx+1}`} src={`/forGallery/IMG_${idx+1}.jpg`} alt="this is an image" />
+                            <Image onClick={handleOnclick} width={100} height={100} key={idx} className="w-[20rem] h-[16rem] rounded-md hover:scale-[1.05] cursor-pointer hover:drop-shadow-lg object-cover transition-all ease-linear" id={`${idx+1}`} src={`/forGallery/IMG_${idx+1}.jpg`} alt="this is an image" />
                         )
                     }
                 </div>
