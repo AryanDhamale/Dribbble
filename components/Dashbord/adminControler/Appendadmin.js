@@ -49,7 +49,7 @@ function Appendadmin() {
             <Card className='w-[95%]'>
                 <CardHeader>
                     <CardTitle>Append user</CardTitle>
-                    <CardDescription className='text-green-500 font-medium text-xs'>don't know what should do here now ? </CardDescription>
+                    <CardDescription className='text-green-500 font-medium text-xs'>don&apos;t know what should do here now ? </CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Input type="text" value={query} onChange={(e)=>setQuery(e.target.value)} className='w-full max-w-md py-5' placeholder="serach admin by email" />
