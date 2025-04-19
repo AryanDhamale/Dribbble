@@ -16,6 +16,7 @@ import { FaCaravan } from "react-icons/fa6";
 import { FcContacts } from "react-icons/fc";
 import { FcGallery } from "react-icons/fc";
 import { FcAbout } from "react-icons/fc";
+import { FcVideoFile } from "react-icons/fc";
 import Link from "next/link";
 
 import { useSession } from "next-auth/react";
@@ -54,6 +55,7 @@ function Sidenav() {
                                 <Link href={'/dashboard?section=booking'}><li className="flex items-center gap-x-2"><CiBookmark className="text-xl text-blue-500"/> Bookings</li></Link>
                                 <Link href={'/dashboard?section=wishlist'}><li className="flex items-center gap-x-2"><FaHeart className="text-xl text-red-500"/>Wishlist</li></Link>
                                 <Link href={'/dashboard?section=review'}><li className="flex items-center gap-x-2"><VscCodeReview className="text-xl text-slate-500"/>Review</li></Link>
+                                <Link href={'/dashboard/?section=departure'}><li className="flex items-center gap-x-2"><FcVideoFile className="text-xl"/>Pre-departure video</li></Link>
                             </ul>
                         </AccordionContent>
                     </AccordionItem>

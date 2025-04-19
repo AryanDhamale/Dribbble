@@ -35,7 +35,7 @@ function Landing() {
                   </div>
 
                   <div className="flex flex-col gap-y-3">
-                  <Image width={100} height={100} className="w-40 object-cover rounded-md" src={'https://housing.com/news/wp-content/uploads/2022/11/Famous-tourist-places-in-India-state-compressed.jpg'} alt="this is an image"/>
+                  <Image width={100} height={100} className="w-40 object-cover rounded-md" src={'https://res.cloudinary.com/dbsncdcuf/image/upload/v1745033577/premium_photo-1697730324062-c012bc98eb13_pjvzsn.jpg'} alt="this is an image"/>
                   <Image width={100} height={100} className="size-40 object-cover rounded-md" src={'https://boutindia.s3.us-east-2.amazonaws.com/images/blog/images/2023-07-21-13-58-37-64ba41b586366-Agra-The-Glimpse-of-Mughal-Kingdom.jpg'} alt="this is an image"/>
                   </div>
 
