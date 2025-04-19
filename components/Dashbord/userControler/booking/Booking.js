@@ -16,6 +16,40 @@ function Booking({session,message,oid})
     const [data,setdata]=useState([]);
     const [success,setSuccess]=useState(false);
     const [loading,setLoading]=useState(false);
+    const [filters,setFilters]=useState({status:'all',payment:'all'});
+
+    const filterOut=()=>{
+      if(!data.length) {
+        return [];
+      }
+      let arr=[...data];
+      switch(filters.status)
+      {
+        case 'ongoing' : 
+        arr=arr.filter((ele,idx)=> ele.tourStatus=='ongoing');
+        break;
+
+        case 'missed' :
+        arr=arr.filter((ele,idx)=> ele.tourStatus=='missed');
+        break;
+
+        case 'completed' : 
+        arr=arr.filter((ele,idx)=> ele.tourStatus=='completed');
+        break; 
+      }
+
+      switch(filters.payment) {
+        case 'completed' : 
+        arr=arr.filter((ele,idx)=> ele.paymentStatus=='completed');
+        break;
+
+        case 'pending' :
+        arr=arr.filter((ele,idx)=> ele.paymentStatus=='pending');
+        break; 
+      }
+
+      return arr;
+    }
 
 
     const fetchData=async()=>{
@@ -31,6 +65,8 @@ function Booking({session,message,oid})
         setLoading(false);
     }
 
+    const afterFilter=filterOut();
+
     useEffect(()=>{
       if(session) fetchData();
       if(message) setSuccess(true);
@@ -39,10 +75,11 @@ function Booking({session,message,oid})
     return (
         <>
         {success && <Success control={setSuccess} oid={oid}/> }
+        <Filter controls={setFilters}/>
         <div className="w-full flex items-center justify-center flex-wrap gap-x-5 gap-y-5">
           {
             loading ? <div className='w-full h-screen flex items-center justify-center'><Lottie className="size-35" animationData={circleLoading}/></div> : 
-            (data.length ? data.map((ele,idx)=><Bookingcard key={idx} data={ele}/> ) : <Lottie className="w-full h-screen" animationData={norecord}/> )
+            (afterFilter.length ? afterFilter.map((ele,idx)=><Bookingcard key={idx} data={ele}/> ) : <Lottie className="w-full h-screen" animationData={norecord}/> )
           }
         </div>
         </>

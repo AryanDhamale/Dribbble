@@ -33,7 +33,7 @@ export const decreaseCount = async (userId, id, from, totalPerson) => { // user_
 
     // cheking here // 
     user.booking.forEach((ele,idx)=>{
-      if((ele.location===res.title) || (ele.tourStatus=='ongoing')) { // no logic here // 
+      if((ele.location===res.title) && (ele.tourStatus=='ongoing')) { // no logic here // 
         throw new Error("you can booked this package only onces!");
       }
     });

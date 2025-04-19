@@ -39,8 +39,8 @@ function Conformation({ data, listing }) {
     const payment = async (cost) => {
         try {
             let { user } = await findUser(session.user.id);
-            if(!user.email_verified || !user.mobile_verified){
-                toast("Please verify yourself first !");
+            if(!user.email_verified || !user.mobile_verified || !user.gender || !user.address || !user.state){
+                toast("Please update your profile first !");
                 return; 
             }
             if(checkState) {

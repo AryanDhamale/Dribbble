@@ -1,4 +1,4 @@
-import Landing from "@/components/Body/Landing";
+import Hero from "@/components/Body/Hero";
 import Count from "@/components/VisitorCount/Count";
 import Review from "@/components/Review/Review";
 import Services from "@/components/Body/Services";
@@ -14,7 +14,7 @@ function App()
        <>
        <Popup/>
        <Suspense fallback={<Loading />}>
-       <Landing/>
+       <Hero/>
        <PopularWrapper/>
        <CityWrapper/>
        <Review/>

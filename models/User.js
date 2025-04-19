@@ -29,6 +29,11 @@ const userSchema=new Schema({
         type: String,
         enum : ['male','female','other']
     },
+    role : {
+        type:String,
+        enum : ['user','admin','main-admin'],
+        default : 'user'
+    },
     state : {type:String},
     address: {type:String},
     wishlist : [{type:Schema.Types.ObjectId,ref:"Listing"}],

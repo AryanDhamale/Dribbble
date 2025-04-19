@@ -3,13 +3,11 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useState } from 'react';
 
 
-function Filter() {
-    const [price,setPrice]=useState("");
+function Filter({price,setPrice}) {
     const handlePriceonchage=(e)=>{
-      setPrice(e.target.value);
+        setPrice(e.target.value);
     }
     return (
         <div className="border-b border-slate-200 drop-shadow-md bg-white z-[1] sticky top-0 w-full h-15 flex items-center justify-start px-10">
@@ -22,9 +20,9 @@ function Filter() {
                     label="By Price"
                     onChange={handlePriceonchage}
                 >
-                    <MenuItem value=""><em>None</em></MenuItem>
-                    <MenuItem value={"down"}>High to low</MenuItem>
-                    <MenuItem value={"up"}>Low to High</MenuItem>
+                    <MenuItem value="default"><em>None</em></MenuItem>
+                    <MenuItem value={"high"}>High to low</MenuItem>
+                    <MenuItem value={"low"}>Low to High</MenuItem>
                 </Select>
             </FormControl>
         </div>

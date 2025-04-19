@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { memo } from "react";
 import Image from "next/image";
-
+import { LogOut } from 'lucide-react';
 
 // Schadcn.ui dependancy // 
 import {
@@ -34,7 +34,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 
 
-function Account({ session }) {
+function Account({ session ,signOut}) {
   const [userdata, setuserdata] = useState(null);
 
   useEffect(() => {
@@ -104,12 +104,15 @@ function Account({ session }) {
             <div className="flex items-center gap-x-4">
               <Skeleton className='size-15 rounded-full' />
               <div className="flex flex-col gap-y-2">
-                <Skeleton className='h-4 w-[300px] ' />
-                <Skeleton className='h-4 w-[250px] ' />
+                <Skeleton className='h-4 w-[17rem]' />
+                <Skeleton className='h-4 w-[14rem]' />
               </div>
             </div>}
 
         </CardContent>
+        <CardFooter>
+          <Button onClick={()=>signOut()} className='cursor-pointer'> <LogOut/> logout</Button>
+        </CardFooter>
       </Card>
 
 

@@ -1,7 +1,18 @@
 "use client";
+// material ui dependacies // 
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+
+// shadcn dependancies // 
+// import {
+//     Accordion,
+//     AccordionContent,
+//     AccordionItem,
+//     AccordionTrigger,
+// } from "@/components/ui/accordion"
+
+// local dependensies /// 
 import { BiLogoYelp } from "react-icons/bi";
 import { MdNoMeals } from "react-icons/md";
 import { AiTwotonePlusCircle } from "react-icons/ai";
@@ -48,12 +59,12 @@ function Itineary({ data }) {
         return isFirstDay ? [`Arrival, ${activites[0]}`] : activites;
     }
 
-    useEffect(() => generateItinerary(data),[]);
+    useEffect(() => generateItinerary(data), []);
 
     return (
         <div className="flex flex-col gap-y-4" id='itineary'>
             <h2 className="text-lg font-medium mt-4">Itineary</h2>
-            <div>
+            <div >
                 {
                     items.map((ele, idx) =>
                         <Accordion key={idx}>
